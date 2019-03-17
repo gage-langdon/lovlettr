@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label Component Should render with classNames as props 1`] = `
+<div
+  className="label  test"
+>
+  test
+</div>
+`;
+
+exports[`Label Component Should render with cursive font 1`] = `
+<div
+  className="label cursive "
+>
+  test
+</div>
+`;
+
+exports[`Label Component Should render with default props 1`] = `
+<div
+  className="label  "
+>
+  test
+</div>
+`;
