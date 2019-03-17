@@ -3,13 +3,13 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 
-const IndexPage = () => (
+const ComposePage = () => (
   <Layout>
-    Home
+    Preview
     <div className="pt-5">
-      <Link to="/compose">Create</Link>
+      <Link to="/compose">Back</Link>
     </div>
   </Layout>
 )
 
-export default IndexPage
+export default ComposePage
