@@ -10,5 +10,6 @@
     opacity: 90%;
     border-radius: 17px;
     outline: 0 !important;
+    border-style: none;
     box-shadow: 0px 3px 6px rgba(0,0,0,.3);
 }
