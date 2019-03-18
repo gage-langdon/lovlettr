@@ -2,7 +2,7 @@
 
 exports[`Button component Will render with onClick function 1`] = `
 <button
-  className="button "
+  className=" "
   onClick={[Function]}
   type="button"
 >
@@ -10,9 +10,18 @@ exports[`Button component Will render with onClick function 1`] = `
 </button>
 `;
 
-exports[`Button component Will render with text as props, but no onClick 1`] = `
+exports[`Button component Will render with styling if primary is true 1`] = `
 <button
   className="button "
+  type="button"
+>
+  Test 4
+</button>
+`;
+
+exports[`Button component Will render with text as props, but no onClick 1`] = `
+<button
+  className=" "
   type="button"
 >
   Test 2

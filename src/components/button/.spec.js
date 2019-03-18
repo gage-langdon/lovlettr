@@ -13,5 +13,10 @@ describe('Button component', () => {
         const wrap = shallow(<Button text={'Test 3'} onClick={() => console.log('Test 3 success')} />);
         expect(wrap).toMatchSnapshot();
     })
+
+    it('Will render with styling if primary is true', () => {
+        const wrap = shallow(<Button text={'Test 4'} primary={true} />);
+        expect(wrap).toMatchSnapshot();
+    })
 });
 
