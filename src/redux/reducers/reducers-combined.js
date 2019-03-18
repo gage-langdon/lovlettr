@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import checkboxReducer from './checkbox/index';
+import composeReducer from './compose/index';
 
-export default combineReducers({ checkboxReducer });
+export default combineReducers({ composeReducer });

@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 import Button from '../components/button';
 import Layout from '../components/layout';
 import Label from '../components/label';
-import Checkbox from '../components/checkbox';
 
 //assets
 import CoupleIllustration1 from '../components/images/couple-illustration-1';

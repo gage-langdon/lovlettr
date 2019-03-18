@@ -1,7 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
-import Layout from "../components/layout"
+//components
+import Layout from '../components/layout';
+import Checkbox from '../components/checkbox';
+
+//redux
 
 const ComposePage = () => (
   <Layout>
@@ -12,7 +16,8 @@ const ComposePage = () => (
     <div>
       <Link to="/preview">Preview</Link>
     </div>
+    <Checkbox />
   </Layout>
-)
+);
 
-export default ComposePage
+export default ComposePage;
