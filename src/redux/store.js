@@ -1,4 +1,4 @@
 import { createStore } from 'redux';
-import checkboxReducer from './reducers/checkbox/';
+import combinedReducers from './reducers/reducers-combined';
 
-const store = createStore({ checkboxReducer });
+export default createStore({ combinedReducers });
