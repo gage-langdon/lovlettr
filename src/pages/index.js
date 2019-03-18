@@ -1,18 +1,32 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 import Button from '../components/button';
-import Layout from "../components/layout"
-import Label from "../components/label"
+import Layout from '../components/layout';
+import Label from '../components/label';
+import CoupleIllustration1 from '../components/images/couple-illustration-1';
 
 const IndexPage = () => (
   <Layout>
-    Home
-    <div className="pt-5">
-      <Label cursive>Be Mine?</Label>
-      <Link to="/compose">Create</Link>
+    <div className="py-5 text-center">
+      <Label cursive>
+        <h2 className="h1">Uniquely Personalized, Interactive Love Letters</h2>
+      </Label>
     </div>
-    <Button primary={true} text={"Send for free"} />
-  </Layout>
-)
+    <div>
+      <CoupleIllustration1 />
+    </div>
 
-export default IndexPage
+    <div className="pt-5">
+      <div className="d-flex flex-column align-items-center pt-5">
+        <Label cursive>
+          <h4>Be Mine?</h4>
+        </Label>
+        <Link to="/compose" className="mt-3">
+          <Button primary text="Try it out" />
+        </Link>
+      </div>
+    </div>
+  </Layout>
+);
+
+export default IndexPage;

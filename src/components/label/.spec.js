@@ -18,4 +18,13 @@ describe('Label Component', () => {
     const wrap = shallow(<Label className="test">test</Label>);
     expect(wrap).toMatchSnapshot();
   });
+
+  it('Should render with a react component as the child', () => {
+    const wrap = shallow(
+      <Label className="test">
+        <span>test</span>
+      </Label>
+    );
+    expect(wrap).toMatchSnapshot();
+  });
 });
