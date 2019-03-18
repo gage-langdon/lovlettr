@@ -1,7 +1,7 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
-import Layout from "../components/layout"
+import Layout from '../components/layout';
 
 const LettrPage = () => (
   <Layout>
@@ -14,6 +14,6 @@ const LettrPage = () => (
       <Link to="/preview">Home</Link>
     </div>
   </Layout>
-)
+);
 
-export default LettrPage
+export default LettrPage;
