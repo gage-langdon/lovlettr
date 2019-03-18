@@ -11,7 +11,7 @@ const IndexPage = () => (
       <Label cursive>Be Mine?</Label>
       <Link to="/compose">Create</Link>
     </div>
-    <Button text={"Send for free"} />
+    <Button primary={true} text={"Send for free"} />
   </Layout>
 )
 
