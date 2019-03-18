@@ -16,7 +16,7 @@ Label.defaultProps = {
 };
 
 Label.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired,
   className: PropTypes.string,
   cursive: PropTypes.bool
 };
