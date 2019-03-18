@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component Will render with onClick function 1`] = `
+<button
+  className="button "
+  onClick={[Function]}
+  type="button"
+>
+  Test 3
+</button>
+`;
+
+exports[`Button component Will render with text as props, but no onClick 1`] = `
+<button
+  className="button "
+  type="button"
+>
+  Test 2
+</button>
+`;

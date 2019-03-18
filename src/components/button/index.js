@@ -1,24 +1,21 @@
 import React from 'react';
-import './button.css';
 import PropTypes from 'prop-types';
 
-const style = {
-    height: '45px',
-    width: '149px',
-    backgroundColor: '#FF6584',
-    color: '#FFFFFF',
-    fontFamily: 'Railway',
-    fontSize: '20px',
-    borderRadius: '17px',
-    outline: 'none'
-}
-const Button = ({ text, onClick }) => (
-    <button style={style} onClick={onClick}>{text}</button>
+import './button.css';
+
+const Button = ({ text, onClick, className }) => (
+    <button className={`button ${className}`} type="button" onClick={onClick}>{text}</button>
 );
+
+Button.defaultProps = {
+    text: '',
+    className: ''
+};
 
 Button.propTypes = {
     text: PropTypes.string.isRequired,
-    onClick: PropTypes.func
-}
+    onClick: PropTypes.func,
+    className: PropTypes.string
+};
 
 export default Button;
