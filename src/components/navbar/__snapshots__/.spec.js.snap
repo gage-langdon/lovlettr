@@ -13,7 +13,6 @@ exports[`Navbar Component Should render with default props 1`] = `
     style={
       Object {
         "margin": "0 auto",
-        "maxWidth": 960,
         "padding": "0.2rem 1.0875rem",
       }
     }
