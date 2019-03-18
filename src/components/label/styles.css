@@ -1,8 +1,9 @@
 .label {
   font-weight: bold;
   font-size: 1.4rem;
+  color: #2f2e41;
 }
 
 .cursive {
-  font-family: "Sacramento", cursive;
+  font-family: 'Sacramento', cursive;
 }

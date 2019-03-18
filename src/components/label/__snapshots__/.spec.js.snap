@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Label Component Should render with a react component as the child 1`] = `
+<div
+  className="label  test"
+>
+  <span>
+    test
+  </span>
+</div>
+`;
+
 exports[`Label Component Should render with classNames as props 1`] = `
 <div
   className="label  test"
