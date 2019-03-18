@@ -1,10 +1,10 @@
-import { UPDATE_CHECKBOX } from '../../action-types/checkbox/index/';
+import { UPDATE_CHECKBOX } from '../../action-types/checkbox';
 
 const initialState = {
   boxChecked: false
 };
 
-export default function(state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_CHECKBOX: {
       const boxChecked = action.payload;
@@ -16,4 +16,4 @@ export default function(state = initialState, action) {
     default:
       return state;
   }
-}
+};

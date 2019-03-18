@@ -1,4 +1,6 @@
-import { createStore } from 'redux';
+import { createStore as reduxCreateStore } from 'redux';
 import combinedReducers from './reducers/reducers-combined';
 
-export default createStore({ combinedReducers });
+//compiling fails if you dont do createStore as an arrow function
+const createStore = () => reduxCreateStore(combinedReducers);
+export default createStore;
