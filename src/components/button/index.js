@@ -5,7 +5,7 @@ import './button.css';
 
 const Button = ({ text, onClick, className, primary, type, disabled }) => (
   <button
-    className={`${primary ? 'button' : ''} ${className}`}
+    className={`${primary ? 'btn-primary' : ''} ${className}`}
     type={type}
     onClick={onClick}
     disabled={disabled}
@@ -27,7 +27,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
   primary: PropTypes.bool,
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['button', 'submit']),
   disabled: PropTypes.bool
 };
 

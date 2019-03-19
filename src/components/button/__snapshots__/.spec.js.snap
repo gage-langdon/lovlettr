@@ -1,8 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button component Will render with disabled styling 1`] = `
+<button
+  className="btn-primary "
+  disabled={true}
+  type="button"
+>
+  test
+</button>
+`;
+
 exports[`Button component Will render with onClick function 1`] = `
 <button
   className=" "
+  disabled={false}
   onClick={[Function]}
   type="button"
 >
@@ -12,7 +23,8 @@ exports[`Button component Will render with onClick function 1`] = `
 
 exports[`Button component Will render with styling if primary is true 1`] = `
 <button
-  className="button "
+  className="btn-primary "
+  disabled={false}
   type="button"
 >
   Test 4
@@ -22,6 +34,7 @@ exports[`Button component Will render with styling if primary is true 1`] = `
 exports[`Button component Will render with text as props, but no onClick 1`] = `
 <button
   className=" "
+  disabled={false}
   type="button"
 >
   Test 2
