@@ -2,7 +2,7 @@
 
 exports[`Button component Will render with disabled styling 1`] = `
 <button
-  className="btn-primary "
+  className="button-primary "
   disabled={true}
   type="button"
 >
@@ -23,7 +23,7 @@ exports[`Button component Will render with onClick function 1`] = `
 
 exports[`Button component Will render with styling if primary is true 1`] = `
 <button
-  className="btn-primary "
+  className="button-primary "
   disabled={false}
   type="button"
 >

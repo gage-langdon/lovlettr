@@ -1,4 +1,4 @@
-.btn-primary {
+.button-primary {
   height: 45px;
   width: 149px;
   background-color: #ff6584;
@@ -14,7 +14,7 @@
 }
 
 button:hover {
-  background-color: #ff05d5;
+  background-color: #fd466b;
 }
 
 button:disabled,
