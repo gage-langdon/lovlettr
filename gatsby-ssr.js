@@ -7,5 +7,3 @@
 // You can delete this file if you're not using it
 
 //tells gatsby to wrap the root element with the one written in ./redux-wrapper
-import reduxWrapper from './redux-wrapper';
-export const wrapRootElement = reduxWrapper;

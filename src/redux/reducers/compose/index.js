@@ -4,11 +4,10 @@ const initialState = {
   boxChecked: false
 };
 
-export default (state = initialState, action) => {
+export default function(state = initialState, action) {
   switch (action.type) {
     case UPDATE_CHECKBOX: {
       const boxChecked = !state.boxChecked;
-      console.log(boxChecked);
       return {
         ...state,
         boxChecked
@@ -17,4 +16,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-};
+}

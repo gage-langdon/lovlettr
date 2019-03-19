@@ -6,4 +6,4 @@ import createStore from './src/redux/store';
 const store = createStore();
 
 //wraps root element
-export default ({ e }) => <Provider store={store}>{e}</Provider>;
+export default ({ element }) => <Provider store={store}>{element}</Provider>;
