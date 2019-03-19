@@ -17,9 +17,6 @@ const mapDispatchToProps = dispatch => ({
 
 //view
 function ComposePage(props) {
-  const state = props.composeProps;
-  const onClick = props.onClick;
-  console.log(state);
   return (
     <Layout>
       Compose
@@ -29,7 +26,6 @@ function ComposePage(props) {
       <div>
         <Link to="/preview">Preview</Link>
       </div>
-      <Checkbox onClick={onClick} />
     </Layout>
   );
 }
