@@ -30,6 +30,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/l/*`] }
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /.svg$/
+        }
+      }
     }
   ]
 };

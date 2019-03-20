@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 // Components
-import Logo from './components/nav-icon';
+import Logo from '../../images/nav-logo.svg';
 
-const Navbar = ({ siteTitle }) => (
+const Navbar = () => (
   <header
     style={{
       background: `#FF6584`,
