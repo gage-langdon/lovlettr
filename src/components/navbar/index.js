@@ -19,7 +19,7 @@ const Navbar = () => (
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <Link to="/">
+        <Link to="/" className="d-flex align-items-center">
           <Logo />
         </Link>
       </h1>
