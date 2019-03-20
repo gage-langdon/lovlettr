@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import Label from '../components/label/index';
 import Button from '../components/button/index';
-import QuestionBuilder from '../components/question-builder/index';
 
 // Redux
 import { connect } from 'react-redux';
@@ -29,10 +28,6 @@ const PreviewLetterPage = ({ letterHTML }) => (
         Edit
       </Link>
       <Button primary text="Send" />
-    </div>
-    <div>
-      <Label cursive>Question</Label>
-      <QuestionBuilder />
     </div>
   </Layout>
 );

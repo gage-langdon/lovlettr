@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default ({}) => {
-  return <div>input</div>;
+export default ({ onChange, value, disabled }) => {
+  return (
+    <input type="text" value={value} onChange={e => onChange(e.target.value)} />
+  );
 };
 
 /* 
@@ -12,6 +14,11 @@ Needs:
     attributes - disabled as prop.
         disabled: We want the option to disable this unless specified otherwise. This is important as this will be
                   enabled from a checkbox or a add answer button, state will be passed down.
+
+        Needs a css file for styling.
+
+    param - value
+        value is the current value being pulled from the state and sent from the parent component.
 
     NOTE: onChange will be generic inside this component, but the prop being passed will be specific 
           to the needed state update.
