@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
+
 //components
 import Button from '../components/button';
 import Layout from '../components/layout';
 import Label from '../components/label';
 
-//assets
-import CoupleIllustration1 from '../components/images/couple-illustration-1';
+// Images
+import CoupleIllustration1 from '../images/couple-illustration-1.svg';
+import SendAndReceiveIllustration from '../images/recieve-and-send-illustration.svg';
 
 const IndexPage = () => (
   <Layout>
@@ -15,10 +17,22 @@ const IndexPage = () => (
         <h2 className="h1">Uniquely Personalized, Interactive Love Letters</h2>
       </Label>
     </div>
-    <div>
+    <div className="d-flex flex-column align-items-center">
       <CoupleIllustration1 />
+      <Link
+        to="/compose"
+        className="mt-3"
+        style={{ paddingLeft: '150px', bottom: '4' }}
+      >
+        <Button primary text="Try it out" />
+      </Link>
     </div>
-
+    <div className="d-flex flex-column align-items-center pt-5 mt-5">
+      <SendAndReceiveIllustration />
+      <Label cursive className="pt-4">
+        <h3>Receive and send a response</h3>
+      </Label>
+    </div>
     <div className="pt-5">
       <div className="d-flex flex-column align-items-center pt-5">
         <Label cursive>

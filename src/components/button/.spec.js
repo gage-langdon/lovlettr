@@ -20,4 +20,9 @@ describe('Button component', () => {
     const wrap = shallow(<Button text={'Test 4'} primary={true} />);
     expect(wrap).toMatchSnapshot();
   });
+
+  it('Will render with disabled styling', () => {
+    const wrap = shallow(<Button text="test" primary disabled />);
+    expect(wrap).toMatchSnapshot();
+  });
 });

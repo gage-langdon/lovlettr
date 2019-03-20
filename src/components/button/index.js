@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 import './button.css';
 
-const Button = ({ text, onClick, className, primary, type }) => (
+const Button = ({ text, onClick, className, primary, type, disabled }) => (
   <button
-    className={`${primary ? 'button' : ''} ${className}`}
+    className={`${primary ? 'button-primary' : ''} ${className}`}
     type={type}
     onClick={onClick}
+    disabled={disabled}
   >
     {text}
   </button>
@@ -17,7 +18,8 @@ Button.defaultProps = {
   text: '',
   className: '',
   type: 'button',
-  primary: false
+  primary: false,
+  disabled: false
 };
 
 Button.propTypes = {
@@ -25,7 +27,8 @@ Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
   primary: PropTypes.bool,
-  type: PropTypes.string
+  type: PropTypes.oneOf(['button', 'submit']),
+  disabled: PropTypes.bool
 };
 
 export default Button;
