@@ -20,7 +20,7 @@ const ComposePage = ({ onLetterChange, letterHTML }) => (
       <h1>Write a letter</h1>
     </Label>
     <hr />
-    <div classname="py-5 px-3">
+    <div className="py-5 px-3">
       <TextEditor onChange={onLetterChange} value={letterHTML} />
     </div>
     <div className="d-flex pt-4">
