@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 
 //components
 import Layout from '../components/layout';
-import Checkbox from '../components/checkbox';
 
 //redux actions
 import { onClick } from '../redux/actions/compose';
