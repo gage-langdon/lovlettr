@@ -28,8 +28,7 @@ class TextEditor extends React.Component {
 }
 
 TextEditor.defaultProps = {
-  value:
-    '<p>Hello <strong>Beautiful</strong>,</p><p><br></p><p>I hope your day is going well!</p><p> </p><p><br></p>'
+  value: ''
 };
 TextEditor.propTypes = {
   value: PropTypes.string,

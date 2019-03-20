@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
+
+//components
 import Button from '../components/button';
 import Layout from '../components/layout';
 import Label from '../components/label';
