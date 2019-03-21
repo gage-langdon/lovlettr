@@ -7,11 +7,16 @@ var ReactQuill = () => null; // mock for ssr
 
 class TextEditor extends React.Component {
   componentDidMount() {
+    const { onChange, placeholder, value } = this.props;
     // Dynamicly load react-quill because it bind to the dom on load
     // which fails during build
     ReactQuill = require('react-quill').default;
     this.forceUpdate();
+
+    // Set placeholder if exists
+    if (!value && placeholder && onChange) onChange(placeholder);
   }
+
   render() {
     const { value, onChange } = this.props;
     return (
@@ -25,10 +30,12 @@ class TextEditor extends React.Component {
 }
 
 TextEditor.defaultProps = {
-  value: ''
+  value: '',
+  placeholder: ''
 };
 TextEditor.propTypes = {
   value: PropTypes.string,
+  placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired
 };
 export default TextEditor;

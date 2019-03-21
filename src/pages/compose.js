@@ -14,28 +14,40 @@ import actions from '../redux/actions/compose';
 const mapStateToProps = ({ compose }) => ({ ...compose });
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-const ComposePage = ({ onLetterChange, letterHTML }) => (
-  <Layout>
-    <Label cursive className="text-center">
-      <h1>Write a letter</h1>
-    </Label>
-    <hr />
-    <div className="py-5 px-3">
-      <TextEditor onChange={onLetterChange} value={letterHTML} />
-    </div>
-    <div className="d-flex pt-4">
-      <small className="text-muted mx-auto">
-        Select text to view formatting
-      </small>
-    </div>
-    <hr />
-    <div className="d-flex justify-content-end">
-      <Link to="/preview">
-        <Button disabled={!letterHTML} primary text="Preview" />
-      </Link>
-    </div>
-  </Layout>
-);
+const placeholderLetter =
+  '<p>Hello <strong>Beautiful</strong>,</p><p><br></p><p>I hope your day is going well!</p><p> </p><p><br></p>';
+
+const ComposePage = ({ onLetterChange, letterHTML }) => {
+  // Empty text editor still has some html scaffolding so we must clean it out in order to check if empty
+  const isLetterEmpty = !Boolean(letterHTML.replace(/<\/?[^>]+(>|$)/g, ''));
+
+  return (
+    <Layout>
+      <Label cursive className="text-center">
+        <h1>Write a letter</h1>
+      </Label>
+      <hr />
+      <div className="py-5 px-3">
+        <TextEditor
+          onChange={onLetterChange}
+          value={letterHTML}
+          placeholder={placeholderLetter}
+        />
+      </div>
+      <div className="d-flex pt-4">
+        <small className="text-muted mx-auto">
+          Select text to view formatting
+        </small>
+      </div>
+      <hr />
+      <div className="d-flex justify-content-end">
+        <Link to="/preview">
+          <Button disabled={isLetterEmpty} primary text="Preview" />
+        </Link>
+      </div>
+    </Layout>
+  );
+};
 
 export default connect(
   mapStateToProps,
