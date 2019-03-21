@@ -15,12 +15,16 @@ export default {
     payload: value
   }),
 
-  onAnswerSubmit: value => ({
-    type: TYPES.ANSWER_ONSUBMIT,
-    payload: value
+  onAnswerSubmit: () => ({
+    type: TYPES.ANSWER_ONSUBMIT
   }),
 
   onAnswerButtonClick: () => ({
     type: TYPES.ANSWER_BUTTON_CLICK
+  }),
+
+  setAnswerArray: value => ({
+    type: TYPES.SET_ANSWER_ARRAY,
+    payload: value
   })
 };

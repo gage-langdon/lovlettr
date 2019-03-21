@@ -38,8 +38,13 @@ export default function(state = initialState, action) {
       return {
         ...state,
         hiddenAddAnswer: false,
-        answerInputText: '',
-        answers: [action.payload]
+        answerInputText: ''
+      };
+    }
+    case TYPES.SET_ANSWER_ARRAY: {
+      return {
+        ...state,
+        answers: action.payload
       };
     }
     default:

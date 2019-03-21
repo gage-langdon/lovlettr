@@ -6,13 +6,16 @@ export default ({
   onAnswerSubmit,
   onAnswerChange,
   answerInputText,
-  onAnswerButtonClick
+  onAnswerButtonClick,
+  answers,
+  answerItemCreate
 }) => {
   return (
     <form
       onSubmit={e => {
         e.preventDefault();
-        onAnswerSubmit(answerInputText);
+        onAnswerSubmit();
+        answers.push(answerItemCreate(answerInputText));
       }}
     >
       <label hidden={hidden} onClick={() => onAnswerButtonClick()}>
