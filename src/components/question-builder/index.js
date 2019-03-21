@@ -12,16 +12,24 @@ const questionBuilder = ({
   answerInputText,
   onAnswerSubmit,
   onAnswerButtonClick,
-  hiddenAddAnswer
+  hiddenAddAnswer,
+  answers
 }) => {
   return (
     <div>
       <div>
         <Label>Question</Label>
-        <InputField onChange={onQuestionChange} value={questionInputText} />
+        <InputField
+          placeholder={'enter question'}
+          onChange={onQuestionChange}
+          value={questionInputText}
+        />
       </div>
+      {answers.length === 0
+        ? null
+        : answers.map(value => <label key={value}>{value}</label>)}
       <AddButton
-        label={'Button'}
+        label={'+ add answer'}
         hidden={hiddenAddAnswer}
         answerInputText={answerInputText}
         onAnswerChange={onAnswerChange}

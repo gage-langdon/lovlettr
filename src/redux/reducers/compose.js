@@ -38,6 +38,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         hiddenAddAnswer: false,
+        answerInputText: '',
         answers: [action.payload]
       };
     }

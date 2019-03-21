@@ -26,7 +26,6 @@ const ComposePage = ({
   onAnswerSubmit,
   onAnswerButtonClick,
   hiddenAddAnswer,
-  addAnswer,
   answers
 }) => (
   <Layout>
@@ -60,8 +59,7 @@ const ComposePage = ({
       onAnswerButtonClick={onAnswerButtonClick}
       onAnswerSubmit={onAnswerSubmit}
       hiddenAddAnswer={hiddenAddAnswer}
-      addAnswer={addAnswer}
-      answer={answers}
+      answers={answers}
     />
     <div />
   </Layout>

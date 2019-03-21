@@ -1,8 +1,13 @@
 import React from 'react';
 
-export default ({ onChange, value, disabled }) => {
+export default ({ onChange, value, placeholder, disabled }) => {
   return (
-    <input type="text" value={value} onChange={e => onChange(e.target.value)} />
+    <input
+      placeholder={placeholder}
+      type="text"
+      value={value}
+      onChange={e => onChange(e.target.value)}
+    />
   );
 };
 
