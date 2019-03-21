@@ -1,8 +1,7 @@
 import TYPES from '../TYPES/compose';
 
 const initialState = {
-  letterHTML:
-    '<p>Hello <strong>Beautiful</strong>,</p><p><br></p><p>I hope your day is going well!</p><p> </p><p><br></p>'
+  letterHTML: ''
 };
 
 export default function(state = initialState, action) {
