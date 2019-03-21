@@ -34,31 +34,37 @@ const questionBuilder = ({
       <div>
         <Label cursive>Question</Label>
         <InputField
-          className="input-field"
+          className="input-question-field"
           placeholder={'Will you go on a date with me?'}
           onChange={onQuestionChange}
           value={questionInputText}
         />
       </div>
-      <div className="d-flex flex-column">
-        {answers.length === 0
-          ? null
-          : answers.map(item => (
-              <label key={item.id} onClick={() => answerItemDelete(item.id)}>
-                {item.text}
-              </label>
-            ))}
+      <div className="answer-container">
+        <div className="d-flex flex-column">
+          {answers.length === 0
+            ? null
+            : answers.map(item => (
+                <label
+                  className="answer-item"
+                  key={item.id}
+                  onClick={() => answerItemDelete(item.id)}
+                >
+                  {item.text}
+                </label>
+              ))}
+        </div>
+        <AddButton
+          label={'+ add answer'}
+          hidden={hiddenAddAnswer}
+          answerInputText={answerInputText}
+          onAnswerChange={onAnswerChange}
+          onAnswerSubmit={onAnswerSubmit}
+          onAnswerButtonClick={onAnswerButtonClick}
+          answers={answers}
+          answerItemCreate={answerItemCreate}
+        />
       </div>
-      <AddButton
-        label={'+ add answer'}
-        hidden={hiddenAddAnswer}
-        answerInputText={answerInputText}
-        onAnswerChange={onAnswerChange}
-        onAnswerSubmit={onAnswerSubmit}
-        onAnswerButtonClick={onAnswerButtonClick}
-        answers={answers}
-        answerItemCreate={answerItemCreate}
-      />
     </div>
   );
 };

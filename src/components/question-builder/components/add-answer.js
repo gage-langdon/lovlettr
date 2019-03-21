@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles.css';
 
 export default ({
   label,
@@ -18,11 +19,16 @@ export default ({
         answers.push(answerItemCreate(answerInputText));
       }}
     >
-      <label hidden={hidden} onClick={() => onAnswerButtonClick()}>
+      <label
+        className="add-answer-button"
+        hidden={hidden}
+        onClick={() => onAnswerButtonClick()}
+      >
         {label}
       </label>
       <input
-        placeholder={'enter answer'}
+        className="input-answer-field"
+        placeholder={'Absolutely!'}
         hidden={!hidden}
         value={answerInputText}
         onChange={e => onAnswerChange(e.target.value)}
