@@ -16,13 +16,25 @@ class TextEditor extends React.Component {
     // Set placeholder if exists
     if (!value && placeholder && onChange) onChange(placeholder);
   }
+  onChange(strVal = '') {
+    // Empty text editor still has some html scaffolding so we must clean it out in order to check if empty
+    const isLetterEmpty = !Boolean(strVal.replace(/<\/?[^>]+(>|$)/g, ''));
 
+    // Logic outside of this component may rely on empty value so its
+    // best to send back empty from here instead of filtering html outside
+    if (isLetterEmpty) strVal = '';
+    this.props.onChange(strVal);
+  }
   render() {
-    const { value, onChange } = this.props;
+    const { value } = this.props;
     return (
       <div className=" d-flex flex-column">
         <div className="p-3">
-          <ReactQuill theme="bubble" value={value} onChange={onChange} />
+          <ReactQuill
+            theme="bubble"
+            value={value}
+            onChange={val => this.onChange(val)}
+          />
         </div>
       </div>
     );
