@@ -15,10 +15,10 @@ import actions from '../redux/actions/compose';
 const mapStateToProps = ({ compose }) => ({ ...compose });
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-<<<<<<< HEAD
 const ComposePage = ({
   onLetterChange,
   letterHTML,
+  placeholderLetter,
   onQuestionChange,
   questionInputText,
   onAnswerChange,
@@ -26,27 +26,17 @@ const ComposePage = ({
   addAnswer,
   answers
 }) => (
-=======
-const placeholderLetter =
-  '<p>Hello <strong>Beautiful</strong>,</p><p><br></p><p>I hope your day is going well!</p><p> </p><p><br></p>';
-
-const ComposePage = ({ onLetterChange, letterHTML }) => (
->>>>>>> 715a2a6cfe1cc70083ee9f5797cc4c75d27cc9eb
   <Layout>
     <Label cursive className="text-center">
       <h1>Write a letter</h1>
     </Label>
     <hr />
     <div className="py-5 px-3">
-<<<<<<< HEAD
-      <TextEditor onChange={onLetterChange} value={letterHTML} />
-=======
       <TextEditor
         onChange={onLetterChange}
         value={letterHTML}
         placeholder={placeholderLetter}
       />
->>>>>>> 715a2a6cfe1cc70083ee9f5797cc4c75d27cc9eb
     </div>
     <div className="d-flex pt-4">
       <small className="text-muted mx-auto">
@@ -59,16 +49,15 @@ const ComposePage = ({ onLetterChange, letterHTML }) => (
         <Button disabled={!letterHTML} primary text="Preview" />
       </Link>
     </div>
-    <div>
-      <QuestionBuilder
-        onQuestionChange={onQuestionChange}
-        questionInputText={questionInputText}
-        onAnswerChange={onAnswerChange}
-        answerInputText={answerInputText}
-        addAnswer={addAnswer}
-        answers={answers}
-      />
-    </div>
+    <QuestionBuilder
+      onQuestionChange={onQuestionChange}
+      questionInputText={questionInputText}
+      onAnswerChange={onAnswerChange}
+      answerInputText={answerInputText}
+      addAnswer={addAnswer}
+      answer={answers}
+    />
+    <div />
   </Layout>
 );
 

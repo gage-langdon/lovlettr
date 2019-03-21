@@ -23,16 +23,11 @@ const questionBuilder = ({
         <Label>Answer</Label>
         <InputField onChange={onAnswerChange} value={answerInputText} />
       </div>
-      <div>
-        {answers.map(value => (
-          <Label id={value}>{value}</Label>
-        ))}
-        <AddButton
-          text={'+ add answer'}
-          value={answerInputText}
-          onClick={addAnswer}
-        />
-      </div>
+      <AddButton
+        text={'+ add answer'}
+        value={answerInputText}
+        onClick={addAnswer}
+      />
     </div>
   );
 };
