@@ -10,8 +10,9 @@ const questionBuilder = ({
   questionInputText,
   onAnswerChange,
   answerInputText,
-  addAnswer,
-  answers
+  onAnswerSubmit,
+  onAnswerButtonClick,
+  hiddenAddAnswer
 }) => {
   return (
     <div>
@@ -19,14 +20,13 @@ const questionBuilder = ({
         <Label>Question</Label>
         <InputField onChange={onQuestionChange} value={questionInputText} />
       </div>
-      <div>
-        <Label>Answer</Label>
-        <InputField onChange={onAnswerChange} value={answerInputText} />
-      </div>
       <AddButton
-        text={'+ add answer'}
-        value={answerInputText}
-        onClick={addAnswer}
+        label={'Button'}
+        hidden={hiddenAddAnswer}
+        answerInputText={answerInputText}
+        onAnswerChange={onAnswerChange}
+        onAnswerSubmit={onAnswerSubmit}
+        onAnswerButtonClick={onAnswerButtonClick}
       />
     </div>
   );

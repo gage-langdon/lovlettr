@@ -4,6 +4,7 @@ const initialState = {
   letterHTML: '',
   questionInputText: '',
   answerInputText: '',
+  hiddenAddAnswer: false,
   answers: []
 };
 
@@ -27,10 +28,17 @@ export default function(state = initialState, action) {
         answerInputText: action.payload
       };
     }
-    case TYPES.ADD_ANSWER: {
+    case TYPES.ANSWER_BUTTON_CLICK: {
       return {
         ...state,
-        answers: action.payload
+        hiddenAddAnswer: true
+      };
+    }
+    case TYPES.ANSWER_ONSUBMIT: {
+      return {
+        ...state,
+        hiddenAddAnswer: false,
+        answers: [action.payload]
       };
     }
     default:

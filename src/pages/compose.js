@@ -23,6 +23,9 @@ const ComposePage = ({
   questionInputText,
   onAnswerChange,
   answerInputText,
+  onAnswerSubmit,
+  onAnswerButtonClick,
+  hiddenAddAnswer,
   addAnswer,
   answers
 }) => (
@@ -54,6 +57,9 @@ const ComposePage = ({
       questionInputText={questionInputText}
       onAnswerChange={onAnswerChange}
       answerInputText={answerInputText}
+      onAnswerButtonClick={onAnswerButtonClick}
+      onAnswerSubmit={onAnswerSubmit}
+      hiddenAddAnswer={hiddenAddAnswer}
       addAnswer={addAnswer}
       answer={answers}
     />

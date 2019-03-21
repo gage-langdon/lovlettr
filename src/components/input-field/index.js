@@ -22,4 +22,6 @@ Needs:
 
     NOTE: onChange will be generic inside this component, but the prop being passed will be specific 
           to the needed state update.
+
+    NOTE: I need to be able to pass a placeholder.
 */
