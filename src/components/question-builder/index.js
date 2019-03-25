@@ -1,14 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 //components
 import InputField from '../input-field';
 import Label from '../label';
-import AddButton from './components/add-answer';
+import AddAnswer from './components/add-answer';
 import './styles.css';
 //modules
 const uuidv1 = require('uuid/v1');
 
-const questionBuilder = ({
+const QuestionBuilder = ({
   onQuestionChange,
   questionInputText,
   onAnswerChange,
@@ -55,7 +56,7 @@ const questionBuilder = ({
                 </label>
               ))}
         </div>
-        <AddButton
+        <AddAnswer
           label={'+ add answer'}
           hidden={hiddenAddAnswer}
           answerInputText={answerInputText}
@@ -71,4 +72,23 @@ const questionBuilder = ({
   );
 };
 
-export default questionBuilder;
+QuestionBuilder.defaultProps = {
+  questionInputText: '',
+  answerInputText: '',
+  hiddenAddAnswer: true,
+  answers: []
+};
+
+QuestionBuilder.propTypes = {
+  onQuestionChange: PropTypes.func,
+  questionInputText: PropTypes.string,
+  onAnswerChange: PropTypes.func,
+  answerInputText: PropTypes.string,
+  onAnswerSubmit: PropTypes.func,
+  onAnswerButtonClick: PropTypes.func,
+  hiddenAddAnswer: PropTypes.bool,
+  answers: PropTypes.array,
+  setAnswerArray: PropTypes.func
+};
+
+export default QuestionBuilder;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Answer component Will only render with all props passed in 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <label
+    className="add-answer-button"
+    hidden={true}
+    onClick={[Function]}
+  />
+  <div
+    className="d-inline-flex flex-column"
+  >
+    <input
+      className="input-answer-field"
+      hidden={false}
+      onChange={[Function]}
+      placeholder="Absolutely!"
+      value=""
+    />
+    <sub
+      className="sub-text"
+      hidden={false}
+    >
+      'enter' to submit
+    </sub>
+  </div>
+</form>
+`;

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default ({ onChange, value, placeholder, className, disabled }) => {
+const Input = ({ onChange, value, placeholder, className, disabled }) => {
   return (
     <input
       className={className}
@@ -12,3 +13,20 @@ export default ({ onChange, value, placeholder, className, disabled }) => {
     />
   );
 };
+
+Input.defaultProps = {
+  className: '',
+  placeholder: '',
+  value: '',
+  disabled: false
+};
+
+Input.propTypes = {
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  disabled: PropTypes.bool
+};
+
+export default Input;

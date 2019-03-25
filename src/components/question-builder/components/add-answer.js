@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import '../styles.css';
 
-export default ({
+const AddAnswer = ({
   label,
   hidden,
   onAnswerSubmit,
@@ -42,3 +44,24 @@ export default ({
     </form>
   );
 };
+
+AddAnswer.defaultProps = {
+  label: '',
+  disabled: true,
+  hidden: true,
+  answerInputText: '',
+  answers: []
+};
+
+AddAnswer.propTypes = {
+  label: PropTypes.string,
+  answerInputText: PropTypes.string,
+  onAnswerChange: PropTypes.func,
+  onAnswerSubmit: PropTypes.func,
+  onAnswerButtonClick: PropTypes.func,
+  answers: PropTypes.array,
+  answerItemCreate: PropTypes.func,
+  disabled: PropTypes.bool
+};
+
+export default AddAnswer;
