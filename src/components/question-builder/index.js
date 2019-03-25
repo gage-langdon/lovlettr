@@ -38,6 +38,7 @@ const questionBuilder = ({
           placeholder={'Will you go on a date with me?'}
           onChange={onQuestionChange}
           value={questionInputText}
+          disabled={!(answers.length === 0)}
         />
       </div>
       <div className="answer-container">
@@ -63,6 +64,7 @@ const questionBuilder = ({
           onAnswerButtonClick={onAnswerButtonClick}
           answers={answers}
           answerItemCreate={answerItemCreate}
+          disabled={questionInputText === ''}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ onChange, value, placeholder, className }) => {
+export default ({ onChange, value, placeholder, className, disabled }) => {
   return (
     <input
       className={className}
@@ -8,6 +8,7 @@ export default ({ onChange, value, placeholder, className }) => {
       type="text"
       value={value}
       onChange={e => onChange(e.target.value)}
+      disabled={disabled}
     />
   );
 };

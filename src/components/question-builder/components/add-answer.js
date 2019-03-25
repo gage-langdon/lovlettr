@@ -9,7 +9,8 @@ export default ({
   answerInputText,
   onAnswerButtonClick,
   answers,
-  answerItemCreate
+  answerItemCreate,
+  disabled
 }) => {
   return (
     <form
@@ -21,18 +22,24 @@ export default ({
     >
       <label
         className="add-answer-button"
-        hidden={hidden}
-        onClick={() => onAnswerButtonClick()}
+        hidden={hidden || answers.length === 3}
+        onClick={() => (!disabled ? onAnswerButtonClick() : null)}
       >
         {label}
       </label>
-      <input
-        className="input-answer-field"
-        placeholder={'Absolutely!'}
-        hidden={!hidden}
-        value={answerInputText}
-        onChange={e => onAnswerChange(e.target.value)}
-      />
+      <div className="d-inline-flex flex-column">
+        <input
+          className="input-answer-field"
+          placeholder={'Absolutely!'}
+          hidden={!hidden}
+          value={answerInputText}
+          onChange={e => onAnswerChange(e.target.value)}
+        />
+
+        <sub className="sub-text" hidden={!hidden}>
+          'enter' to submit
+        </sub>
+      </div>
     </form>
   );
 };
