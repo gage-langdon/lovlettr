@@ -6,6 +6,9 @@ import InputField from '../input-field';
 import Label from '../label';
 import AddAnswer from './components/add-answer';
 import './styles.css';
+
+//images
+import Delete from '../../images/delete.svg';
 //modules
 const uuidv1 = require('uuid/v1');
 
@@ -47,13 +50,10 @@ const QuestionBuilder = ({
           {answers.length === 0
             ? null
             : answers.map(item => (
-                <label
-                  className="answer-item"
-                  key={item.id}
-                  onClick={() => answerItemDelete(item.id)}
-                >
-                  {item.text}
-                </label>
+                <div key={item.id}>
+                  <label className="answer-item">{item.text}</label>
+                  <Delete onClick={() => answerItemDelete(item.id)} />
+                </div>
               ))}
         </div>
         <AddAnswer
