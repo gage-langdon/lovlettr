@@ -45,17 +45,18 @@ const QuestionBuilder = ({
           disabled={!(answers.length === 0)}
         />
       </div>
-      <div className="answer-container">
-        <div className="d-flex flex-column">
-          {answers.length === 0
-            ? null
-            : answers.map(item => (
-                <div key={item.id}>
-                  <label className="answer-item">{item.text}</label>
-                  <Delete onClick={() => answerItemDelete(item.id)} />
-                </div>
-              ))}
-        </div>
+      <div className="d-flex flex-column">
+        {answers.length === 0
+          ? null
+          : answers.map(item => (
+              <div className="answer-container" key={item.id}>
+                <label className="answer-item">{item.text}</label>
+                <Delete
+                  className="answer-item-x"
+                  onClick={() => answerItemDelete(item.id)}
+                />
+              </div>
+            ))}
         <AddAnswer
           label={'+ add answer'}
           hidden={hiddenAddAnswer}

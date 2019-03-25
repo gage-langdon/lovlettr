@@ -36,6 +36,7 @@ const AddAnswer = ({
           hidden={!hidden}
           value={answerInputText}
           onChange={e => onAnswerChange(e.target.value)}
+          maxLength="18"
         />
         <sub className="sub-text" hidden={!hidden}>
           'enter' to submit
