@@ -19,7 +19,8 @@ export default function(state = initialState, action) {
     case TYPES.EDIT_QUESTION: {
       return {
         ...state,
-        questionInputText: action.payload
+        questionInputText: action.payload,
+        hiddenAddAnswer: false
       };
     }
     case TYPES.EDIT_ANSWER: {

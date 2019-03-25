@@ -35,7 +35,6 @@ export default ({
           value={answerInputText}
           onChange={e => onAnswerChange(e.target.value)}
         />
-
         <sub className="sub-text" hidden={!hidden}>
           'enter' to submit
         </sub>
