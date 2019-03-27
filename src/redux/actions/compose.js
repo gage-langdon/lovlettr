@@ -26,5 +26,12 @@ export default {
   setAnswerArray: value => ({
     type: TYPES.SET_ANSWER_ARRAY,
     payload: value
+  }),
+
+  onQuestionTick: () => ({
+    type: TYPES.SET_TICK_QUESTION
+  }),
+  onTextEditorTick: () => ({
+    type: TYPES.SET_TICK_EDITOR
   })
 };

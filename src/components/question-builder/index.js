@@ -23,7 +23,9 @@ const QuestionBuilder = ({
   onAnswerButtonClick,
   hiddenAddAnswer,
   answers,
-  setAnswerArray
+  setAnswerArray,
+  onQuestionTick,
+  questionBuilderTick
 }) => {
   const answerItemCreate = text => {
     const item = { text: text, id: uuidv1() };
@@ -36,12 +38,12 @@ const QuestionBuilder = ({
   };
 
   return (
-    <div>
-      <div>
-        <div className="d-flex align-items-row">
-          <Checkbox />
-          <Label cursive>Question</Label>
-        </div>
+    <div className="d-flex flex-column">
+      <div className="d-flex align-items-row">
+        <Checkbox onClick={onQuestionTick} hidden={questionBuilderTick} />
+        <Label cursive>Question</Label>
+      </div>
+      <div hidden={questionBuilderTick}>
         <InputField
           className="input-question-field"
           placeholder={'Will you go on a date with me?'}
@@ -49,30 +51,30 @@ const QuestionBuilder = ({
           value={questionInputText}
           disabled={!(answers.length === 0)}
         />
-      </div>
-      <div className="d-flex flex-column">
-        {answers.length === 0
-          ? null
-          : answers.map(item => (
-              <div className="answer-container" key={item.id}>
-                <label className="answer-item">{item.text}</label>
-                <Delete
-                  className="answer-item-x"
-                  onClick={() => answerItemDelete(item.id)}
-                />
-              </div>
-            ))}
-        <AddAnswer
-          label={'+ add answer'}
-          hidden={hiddenAddAnswer}
-          answerInputText={answerInputText}
-          onAnswerChange={onAnswerChange}
-          onAnswerSubmit={onAnswerSubmit}
-          onAnswerButtonClick={onAnswerButtonClick}
-          answers={answers}
-          answerItemCreate={answerItemCreate}
-          disabled={questionInputText === ''}
-        />
+        <div className="d-flex flex-column">
+          {answers.length === 0
+            ? null
+            : answers.map(item => (
+                <div className="answer-container" key={item.id}>
+                  <label className="answer-item">{item.text}</label>
+                  <Delete
+                    className="answer-item-x"
+                    onClick={() => answerItemDelete(item.id)}
+                  />
+                </div>
+              ))}
+          <AddAnswer
+            label={'+ add answer'}
+            hidden={hiddenAddAnswer}
+            answerInputText={answerInputText}
+            onAnswerChange={onAnswerChange}
+            onAnswerSubmit={onAnswerSubmit}
+            onAnswerButtonClick={onAnswerButtonClick}
+            answers={answers}
+            answerItemCreate={answerItemCreate}
+            disabled={questionInputText === ''}
+          />
+        </div>
       </div>
     </div>
   );

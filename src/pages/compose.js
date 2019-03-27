@@ -27,7 +27,10 @@ const ComposePage = ({
   onAnswerButtonClick,
   hiddenAddAnswer,
   answers,
-  setAnswerArray
+  setAnswerArray,
+  onQuestionTick,
+  questionBuilderTick,
+  onTextEditorTick
 }) => (
   <Layout>
     <Label cursive className="text-center">
@@ -58,6 +61,8 @@ const ComposePage = ({
         hiddenAddAnswer={hiddenAddAnswer}
         answers={answers}
         setAnswerArray={setAnswerArray}
+        onQuestionTick={onQuestionTick}
+        questionBuilderTick={questionBuilderTick}
       />
     </div>
     <div className="d-flex justify-content-end">
