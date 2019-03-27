@@ -14,12 +14,15 @@ const AddAnswer = ({
   answerItemCreate,
   disabled
 }) => {
+  const submitHandler = () => {
+    if (answerInputText !== '') answers.push(answerItemCreate(answerInputText));
+  };
   return (
     <form
       onSubmit={e => {
         e.preventDefault();
         onAnswerSubmit();
-        answers.push(answerItemCreate(answerInputText));
+        submitHandler();
       }}
     >
       <label
