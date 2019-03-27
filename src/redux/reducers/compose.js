@@ -53,14 +53,16 @@ export default function(state = initialState, action) {
     case TYPES.SET_TICK_EDITOR: {
       return {
         ...state,
-        textEditorTick: !state.textEditorTick
+        textEditorTick: !state.textEditorTick,
+        letterHTML: ''
       };
     }
     case TYPES.SET_TICK_QUESTION: {
       return {
         ...state,
         questionBuilderTick: !state.questionBuilderTick,
-        answers: []
+        answers: [],
+        questionInputText: ''
       };
     }
     default:
