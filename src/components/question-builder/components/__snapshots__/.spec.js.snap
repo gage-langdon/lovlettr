@@ -10,21 +10,24 @@ exports[`Answer component Will only render with all props passed in 1`] = `
     onClick={[Function]}
   />
   <div
-    className="d-inline-flex flex-column"
+    hidden={false}
   >
-    <input
-      className="input-answer-field"
-      hidden={false}
-      onChange={[Function]}
-      placeholder="Absolutely!"
-      value=""
-    />
-    <sub
-      className="sub-text"
-      hidden={false}
+    <div
+      className="d-inline-flex flex-column"
     >
-      'enter' to submit
-    </sub>
+      <input
+        className="input-answer-field"
+        maxLength="18"
+        onChange={[Function]}
+        placeholder="Absolutely!"
+        value=""
+      />
+      <sub
+        className="sub-text"
+      >
+        'enter' to submit
+      </sub>
+    </div>
   </div>
 </form>
 `;

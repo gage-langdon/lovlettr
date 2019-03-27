@@ -24,22 +24,21 @@ exports[`Text-Editor Component Will render default props 1`] = `
 
 exports[`Text-Editor Component Will render with value passed as prop 1`] = `
 <div
-  className="text-editor-container d-flex flex-column"
+  className=" d-flex flex-column align-items-center"
 >
   <div
-    className="p-3"
+    className="text-editor-container"
   >
-    <Quill
-      modules={Object {}}
+    <Component
       onChange={[Function]}
       theme="bubble"
       value="<p>testing 123</p>"
     />
   </div>
-  <small
-    className="text-muted mx-auto mt-auto pb-2"
+  <sub
+    className="mt-2"
   >
-    Select text to view formatting
-  </small>
+    select text to view formatting
+  </sub>
 </div>
 `;
