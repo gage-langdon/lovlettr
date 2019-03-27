@@ -6,7 +6,7 @@ const initialState = {
   answerInputText: '',
   hiddenAddAnswer: false,
   answers: [],
-  questionBuilderTick: false,
+  questionBuilderTick: true,
   textEditorTick: false
 };
 

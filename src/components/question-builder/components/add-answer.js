@@ -29,18 +29,17 @@ const AddAnswer = ({
       >
         {label}
       </label>
-      <div className="d-inline-flex flex-column">
-        <input
-          className="input-answer-field"
-          placeholder={'Absolutely!'}
-          hidden={!hidden}
-          value={answerInputText}
-          onChange={e => onAnswerChange(e.target.value)}
-          maxLength="18"
-        />
-        <sub className="sub-text" hidden={!hidden}>
-          'enter' to submit
-        </sub>
+      <div hidden={!hidden}>
+        <div className="d-inline-flex flex-column">
+          <input
+            className="input-answer-field"
+            placeholder={'Absolutely!'}
+            value={answerInputText}
+            onChange={e => onAnswerChange(e.target.value)}
+            maxLength="18"
+          />
+          <sub className="sub-text">'enter' to submit</sub>
+        </div>
       </div>
     </form>
   );

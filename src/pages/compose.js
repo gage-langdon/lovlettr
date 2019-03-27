@@ -32,47 +32,51 @@ const ComposePage = ({
   setAnswerArray,
   onQuestionTick,
   questionBuilderTick,
-  onTextEditorTick
+  onTextEditorTick,
+  textEditorTick
 }) => (
   <Layout>
-    <Label cursive className="text-center">
-      <h1>Write a letter</h1>
-    </Label>
-    <hr />
-    <div className="py-5 px-3">
-      <TextEditor
-        onChange={onLetterChange}
-        value={letterHTML}
-        placeholder={placeholderLetter}
-      />
+    <div className="text-editor-header">
+      <Checkbox onClick={onTextEditorTick} hidden={textEditorTick} />
+      <Label cursive className="text-center">
+        Your letter
+      </Label>
     </div>
-    <div className="d-flex pt-4">
-      <small className="text-muted mx-auto">
-        Select text to view formatting
-      </small>
+    <div hidden={textEditorTick}>
+      <div className="d-flex justify-content-center">
+        <TextEditor
+          onChange={onLetterChange}
+          value={letterHTML}
+          placeholder={placeholderLetter}
+        />
+      </div>
     </div>
-    <hr />
     <div className="question-header">
       <Checkbox onClick={onQuestionTick} hidden={questionBuilderTick} />
       <Label cursive>Question</Label>
     </div>
     <div className="d-flex justify-content-center">
-      <QuestionBuilder
-        onQuestionChange={onQuestionChange}
-        questionInputText={questionInputText}
-        onAnswerChange={onAnswerChange}
-        answerInputText={answerInputText}
-        onAnswerButtonClick={onAnswerButtonClick}
-        onAnswerSubmit={onAnswerSubmit}
-        hiddenAddAnswer={hiddenAddAnswer}
-        answers={answers}
-        setAnswerArray={setAnswerArray}
-        questionBuilderTick={questionBuilderTick}
-      />
+      <div hidden={questionBuilderTick}>
+        <QuestionBuilder
+          onQuestionChange={onQuestionChange}
+          questionInputText={questionInputText}
+          onAnswerChange={onAnswerChange}
+          answerInputText={answerInputText}
+          onAnswerButtonClick={onAnswerButtonClick}
+          onAnswerSubmit={onAnswerSubmit}
+          hiddenAddAnswer={hiddenAddAnswer}
+          answers={answers}
+          setAnswerArray={setAnswerArray}
+        />
+      </div>
     </div>
-    <div className="d-flex justify-content-end">
+    <div className="d-flex justify-content-end mt-3">
       <Link to="/preview">
-        <Button disabled={!letterHTML} primary text="Preview" />
+        <Button
+          disabled={letterHTML || answers.length === 0}
+          primary
+          text="Preview"
+        />
       </Link>
     </div>
   </Layout>

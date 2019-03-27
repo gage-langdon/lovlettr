@@ -28,14 +28,15 @@ class TextEditor extends React.Component {
   render() {
     const { value } = this.props;
     return (
-      <div className=" d-flex flex-column">
-        <div className="p-3">
+      <div className=" d-flex flex-column align-items-center">
+        <div className="text-editor-container">
           <ReactQuill
             theme="bubble"
             value={value}
             onChange={val => this.onChange(val)}
           />
         </div>
+        <sub className="mt-2">select text to view formatting</sub>
       </div>
     );
   }
