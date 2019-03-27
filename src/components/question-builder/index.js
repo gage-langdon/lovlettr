@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 //components
 import InputField from '../input-field';
-import Label from '../label';
 import AddAnswer from './components/add-answer';
-import Checkbox from '../checkbox';
 import './styles.css';
 
 //images
@@ -39,10 +37,6 @@ const QuestionBuilder = ({
 
   return (
     <div className="d-flex flex-column">
-      <div className="d-flex align-items-row">
-        <Checkbox onClick={onQuestionTick} hidden={questionBuilderTick} />
-        <Label cursive>Question</Label>
-      </div>
       <div hidden={questionBuilderTick}>
         <InputField
           className="input-question-field"

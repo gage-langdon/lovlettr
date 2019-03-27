@@ -7,6 +7,8 @@ import Label from '../components/label';
 import Button from '../components/button';
 import TextEditor from '../components/text-editor';
 import QuestionBuilder from '../components/question-builder/index';
+import Checkbox from '../components/checkbox';
+import './styles/compose.css';
 
 // Redux
 import { connect } from 'react-redux';
@@ -50,6 +52,10 @@ const ComposePage = ({
       </small>
     </div>
     <hr />
+    <div className="question-header">
+      <Checkbox onClick={onQuestionTick} hidden={questionBuilderTick} />
+      <Label cursive>Question</Label>
+    </div>
     <div className="d-flex justify-content-center">
       <QuestionBuilder
         onQuestionChange={onQuestionChange}
@@ -61,7 +67,6 @@ const ComposePage = ({
         hiddenAddAnswer={hiddenAddAnswer}
         answers={answers}
         setAnswerArray={setAnswerArray}
-        onQuestionTick={onQuestionTick}
         questionBuilderTick={questionBuilderTick}
       />
     </div>
