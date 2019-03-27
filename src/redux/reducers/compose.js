@@ -59,7 +59,8 @@ export default function(state = initialState, action) {
     case TYPES.SET_TICK_QUESTION: {
       return {
         ...state,
-        questionBuilderTick: !state.questionBuilderTick
+        questionBuilderTick: !state.questionBuilderTick,
+        answers: []
       };
     }
     default:
