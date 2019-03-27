@@ -1,0 +1,15 @@
+.tick-container {
+  border: #2f2e41 solid 1px;
+  border-radius: 7px 7px 7px 7px;
+  height: 17px;
+  width: 17px;
+  margin-top: 6px;
+  margin-right: 7px;
+}
+
+.tick {
+  position: absolute;
+  margin-top: 6px;
+  margin-left: 3px;
+  z-index: 1;
+}

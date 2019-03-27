@@ -5,10 +5,12 @@ import PropTypes from 'prop-types';
 import InputField from '../input-field';
 import Label from '../label';
 import AddAnswer from './components/add-answer';
+import Checkbox from '../checkbox';
 import './styles.css';
 
 //images
 import Delete from '../../images/delete.svg';
+
 //modules
 const uuidv1 = require('uuid/v1');
 
@@ -36,7 +38,10 @@ const QuestionBuilder = ({
   return (
     <div>
       <div>
-        <Label cursive>Question</Label>
+        <div className="d-flex align-items-row">
+          <Checkbox />
+          <Label cursive>Question</Label>
+        </div>
         <InputField
           className="input-question-field"
           placeholder={'Will you go on a date with me?'}
