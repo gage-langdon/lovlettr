@@ -5,15 +5,11 @@ import TextEditor from './index';
 
 describe('Text-Editor Component', () => {
   it('Will render default props', () => {
-    document = {};
-
     const wrap = shallow(<TextEditor onChange={() => {}} />);
     expect(wrap).toMatchSnapshot();
   });
 
   it('Will render with value passed as prop', () => {
-    document = {};
-
     const wrap = shallow(
       <TextEditor value="<p>testing 123</p>" onChange={() => {}} />
     );

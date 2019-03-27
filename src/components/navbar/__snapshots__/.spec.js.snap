@@ -25,9 +25,10 @@ exports[`Navbar Component Should render with default props 1`] = `
       }
     >
       <ForwardRef
+        className="d-flex align-items-center"
         to="/"
       >
-        <Image />
+        <test-file-stub />
       </ForwardRef>
     </h1>
   </div>

@@ -23,7 +23,7 @@ class TextEditor extends React.Component {
     // Logic outside of this component may rely on empty value so its
     // best to send back empty from here instead of filtering html outside
     if (isLetterEmpty) strVal = '';
-    this.props.onChange(strVal);
+    this.props.onChange(strVal.replace(/<\/?[^>]+(>|$)/g, ''));
   }
   render() {
     const { value } = this.props;
@@ -33,7 +33,7 @@ class TextEditor extends React.Component {
           <ReactQuill
             theme="bubble"
             value={value}
-            onChange={val => this.onChange(val)}
+            onChange={value => this.onChange(value)}
           />
         </div>
         <sub className="mt-2">select text to view formatting</sub>
