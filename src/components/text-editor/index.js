@@ -7,14 +7,9 @@ var ReactQuill = () => null; // mock for ssr
 
 class TextEditor extends React.Component {
   componentDidMount() {
-<<<<<<< HEAD
-    console.log('HIT HIT HIT HIT');
-=======
     const { onChange, placeholder, value } = this.props;
->>>>>>> 715a2a6cfe1cc70083ee9f5797cc4c75d27cc9eb
     // Dynamicly load react-quill because it bind to the dom on load
     // which fails during build
-    console.log(document);
     ReactQuill = require('react-quill').default;
     this.forceUpdate();
 
