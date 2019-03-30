@@ -10,14 +10,3 @@ exports[`Input field component Will render with no props 1`] = `
   value=""
 />
 `;
-
-exports[`Input field component Will render with onChange and no other props 1`] = `
-<input
-  className=""
-  disabled={false}
-  onChange={[Function]}
-  placeholder=""
-  type="text"
-  value=""
-/>
-`;
