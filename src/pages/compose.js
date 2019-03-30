@@ -14,6 +14,9 @@ import actions from '../redux/actions/compose';
 const mapStateToProps = ({ compose }) => ({ ...compose });
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
+const placeholderLetter =
+  '<p>Hello <strong>Beautiful</strong>,</p><p><br></p><p>I hope your day is going well!</p><p> </p><p><br></p>';
+
 const ComposePage = ({ onLetterChange, letterHTML }) => (
   <Layout>
     <Label cursive className="text-center">
@@ -21,7 +24,11 @@ const ComposePage = ({ onLetterChange, letterHTML }) => (
     </Label>
     <hr />
     <div className="py-5 px-3">
-      <TextEditor onChange={onLetterChange} value={letterHTML} />
+      <TextEditor
+        onChange={onLetterChange}
+        value={letterHTML}
+        placeholder={placeholderLetter}
+      />
     </div>
     <div className="d-flex pt-4">
       <small className="text-muted mx-auto">
