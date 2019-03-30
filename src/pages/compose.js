@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import Label from '../components/label';
 import Button from '../components/button';
 import TextEditor from '../components/text-editor';
+import QuestionBuilder from '../components/question-builder/index';
 
 // Redux
 import { connect } from 'react-redux';
@@ -14,10 +15,20 @@ import actions from '../redux/actions/compose';
 const mapStateToProps = ({ compose }) => ({ ...compose });
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-const placeholderLetter =
-  '<p>Hello <strong>Beautiful</strong>,</p><p><br></p><p>I hope your day is going well!</p><p> </p><p><br></p>';
-
-const ComposePage = ({ onLetterChange, letterHTML }) => (
+const ComposePage = ({
+  onLetterChange,
+  letterHTML,
+  placeholderLetter,
+  onQuestionChange,
+  questionInputText,
+  onAnswerChange,
+  answerInputText,
+  onAnswerSubmit,
+  onAnswerButtonClick,
+  hiddenAddAnswer,
+  answers,
+  setAnswerArray
+}) => (
   <Layout>
     <Label cursive className="text-center">
       <h1>Write a letter</h1>
@@ -36,6 +47,19 @@ const ComposePage = ({ onLetterChange, letterHTML }) => (
       </small>
     </div>
     <hr />
+    <div className="d-flex justify-content-center">
+      <QuestionBuilder
+        onQuestionChange={onQuestionChange}
+        questionInputText={questionInputText}
+        onAnswerChange={onAnswerChange}
+        answerInputText={answerInputText}
+        onAnswerButtonClick={onAnswerButtonClick}
+        onAnswerSubmit={onAnswerSubmit}
+        hiddenAddAnswer={hiddenAddAnswer}
+        answers={answers}
+        setAnswerArray={setAnswerArray}
+      />
+    </div>
     <div className="d-flex justify-content-end">
       <Link to="/preview">
         <Button disabled={!letterHTML} primary text="Preview" />
