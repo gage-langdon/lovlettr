@@ -29,6 +29,7 @@
       "^.+\\.jsx?$": "babel-jest"
     },
     "moduleNameMapper": {
+      "\\.svg$": "<rootDir>/test/svgMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     }
   },
