@@ -6,6 +6,9 @@ import InputField from '../input-field';
 import Label from '../label';
 import AddAnswer from './components/add-answer';
 import './styles.css';
+
+//images
+import Delete from '../../images/delete.svg';
 //modules
 const uuidv1 = require('uuid/v1');
 
@@ -42,20 +45,18 @@ const QuestionBuilder = ({
           disabled={!(answers.length === 0)}
         />
       </div>
-      <div className="answer-container">
-        <div className="d-flex flex-column">
-          {answers.length === 0
-            ? null
-            : answers.map(item => (
-                <label
-                  className="answer-item"
-                  key={item.id}
+      <div className="d-flex flex-column">
+        {answers.length === 0
+          ? null
+          : answers.map(item => (
+              <div className="answer-container" key={item.id}>
+                <label className="answer-item">{item.text}</label>
+                <Delete
+                  className="answer-item-x"
                   onClick={() => answerItemDelete(item.id)}
-                >
-                  {item.text}
-                </label>
-              ))}
-        </div>
+                />
+              </div>
+            ))}
         <AddAnswer
           label={'+ add answer'}
           hidden={hiddenAddAnswer}
