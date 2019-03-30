@@ -1,0 +1,12 @@
+.text-editor-header {
+  display: flex;
+  justify-content: center;
+  margin-right: 212px;
+  margin-top: 35px;
+}
+.question-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-right: 230px;
+}

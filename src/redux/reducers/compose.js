@@ -5,7 +5,9 @@ const initialState = {
   questionInputText: '',
   answerInputText: '',
   hiddenAddAnswer: false,
-  answers: []
+  answers: [],
+  questionBuilderTick: true,
+  textEditorTick: false
 };
 
 export default function(state = initialState, action) {
@@ -46,6 +48,21 @@ export default function(state = initialState, action) {
       return {
         ...state,
         answers: action.payload
+      };
+    }
+    case TYPES.SET_TICK_EDITOR: {
+      return {
+        ...state,
+        textEditorTick: !state.textEditorTick,
+        letterHTML: ''
+      };
+    }
+    case TYPES.SET_TICK_QUESTION: {
+      return {
+        ...state,
+        questionBuilderTick: !state.questionBuilderTick,
+        answers: [],
+        questionInputText: ''
       };
     }
     default:

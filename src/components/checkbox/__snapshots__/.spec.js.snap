@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component Will render with hidden passed in, will be hidden 1`] = `
+<div
+  onClick={[Function]}
+>
+  <test-file-stub
+    className="tick"
+    hidden={true}
+  />
+  <div
+    className="tick-container"
+  />
+</div>
+`;

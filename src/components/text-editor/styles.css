@@ -1,5 +1,7 @@
 .text-editor-container {
-  border: rgba(0, 0, 0, 0.1) solid 1px;
-  border-radius: 17px;
-  min-height: 140px;
+  border: #707070 solid 1px;
+  border-radius: 17px 17px 17px 0px;
+  min-height: 275px;
+  width: 317px;
+  margin-top: 3px;
 }

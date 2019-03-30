@@ -1,27 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Question component Will only render with all props passed in 1`] = `
-<div>
-  <div>
-    <Label
-      className=""
-      cursive={true}
-    >
-      Question
-    </Label>
-    <Input
-      className="input-question-field"
-      disabled={false}
-      placeholder="Will you go on a date with me?"
-      value=""
-    />
-  </div>
+<div
+  className="d-flex flex-column"
+>
+  <Input
+    className="input-question-field"
+    disabled={false}
+    placeholder="Will you go on a date with me?"
+    value=""
+  />
   <div
-    className="answer-container"
+    className="d-flex flex-column"
   >
-    <div
-      className="d-flex flex-column"
-    />
     <AddAnswer
       answerInputText=""
       answerItemCreate={[Function]}

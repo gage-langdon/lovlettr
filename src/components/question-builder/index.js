@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 //components
 import InputField from '../input-field';
-import Label from '../label';
 import AddAnswer from './components/add-answer';
 import './styles.css';
 
 //images
 import Delete from '../../images/delete.svg';
+
 //modules
 const uuidv1 = require('uuid/v1');
 
@@ -34,17 +34,14 @@ const QuestionBuilder = ({
   };
 
   return (
-    <div>
-      <div>
-        <Label cursive>Question</Label>
-        <InputField
-          className="input-question-field"
-          placeholder={'Will you go on a date with me?'}
-          onChange={onQuestionChange}
-          value={questionInputText}
-          disabled={!(answers.length === 0)}
-        />
-      </div>
+    <div className="d-flex flex-column">
+      <InputField
+        className="input-question-field"
+        placeholder={'Will you go on a date with me?'}
+        onChange={onQuestionChange}
+        value={questionInputText}
+        disabled={!(answers.length === 0)}
+      />
       <div className="d-flex flex-column">
         {answers.length === 0
           ? null
