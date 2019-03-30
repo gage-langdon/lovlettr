@@ -7,8 +7,10 @@ var ReactQuill = () => null; // mock for ssr
 
 class TextEditor extends React.Component {
   componentDidMount() {
+    console.log('HIT HIT HIT HIT');
     // Dynamicly load react-quill because it bind to the dom on load
     // which fails during build
+    console.log(document);
     ReactQuill = require('react-quill').default;
     this.forceUpdate();
   }
