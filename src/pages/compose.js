@@ -70,7 +70,7 @@ const ComposePage = ({
         />
       </div>
     </div>
-    <div className="d-flex justify-content-end mt-3">
+    <div className="d-flex justify-content-end mt-3 mr-2">
       <Link to="/preview">
         <Button
           disabled={letterHTML || answers.length === 0}

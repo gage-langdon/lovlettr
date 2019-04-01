@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Button from '../../button';
 import '../styles.css';
 
 const AddAnswer = ({
@@ -33,7 +33,7 @@ const AddAnswer = ({
         {label}
       </label>
       <div hidden={!hidden}>
-        <div className="d-inline-flex flex-column">
+        <div className="d-inline-flex flex-row">
           <input
             className="input-answer-field"
             placeholder={'Absolutely!'}
@@ -41,7 +41,11 @@ const AddAnswer = ({
             onChange={e => onAnswerChange(e.target.value)}
             maxLength="18"
           />
-          <sub className="sub-text">'enter' to submit</sub>
+          <Button
+            className="button-secondary"
+            text="Submit"
+            onClick={() => (submitHandler(), onAnswerSubmit())}
+          />
         </div>
       </div>
     </form>

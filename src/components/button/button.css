@@ -13,6 +13,20 @@
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
+.button-secondary {
+  height: 40px;
+  width: 123px;
+  background-color: #ff6584;
+  color: #ffffffe6;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  opacity: 90%;
+  border-radius: 0px 17px 17px 0px;
+  outline: 0 !important;
+  border-style: none;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
 button:hover {
   background-color: #fd466b;
 }

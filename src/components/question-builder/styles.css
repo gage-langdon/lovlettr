@@ -36,9 +36,9 @@
 
 .input-answer-field {
   border: #707070 solid 1px;
-  border-radius: 0px 17px 17px 17px;
+  border-radius: 0px 0px 0px 17px;
   min-height: 40px;
-  min-width: 185px;
+  min-width: 195px;
   text-align: center;
   font-size: 15px;
   color: #2f2e41;
