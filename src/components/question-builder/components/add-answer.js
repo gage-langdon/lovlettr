@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../button';
 import '../styles.css';
-
+/* eslint-disable */
 const AddAnswer = ({
   label,
   hidden,

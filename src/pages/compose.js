@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import Label from '../components/label';
 import Button from '../components/button';
-import TextEditor from '../components/text-editor';
+import TextEditor from '../components/text-editor/index.js';
 import QuestionBuilder from '../components/question-builder/index';
 import Checkbox from '../components/checkbox';
 import './styles/compose.css';
@@ -20,7 +20,6 @@ const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 const ComposePage = ({
   onLetterChange,
   letterHTML,
-  placeholderLetter,
   onQuestionChange,
   questionInputText,
   onAnswerChange,
@@ -45,9 +44,9 @@ const ComposePage = ({
     <div hidden={textEditorTick}>
       <div className="d-flex justify-content-center">
         <TextEditor
-          onChange={onLetterChange}
-          value={letterHTML}
-          placeholder={placeholderLetter}
+          onLetterChange={e => onLetterChange(e)}
+          placeholder="enter how you feel"
+          letterHTML={letterHTML}
         />
       </div>
     </div>
@@ -72,11 +71,7 @@ const ComposePage = ({
     </div>
     <div className="d-flex justify-content-end mt-3 mr-2">
       <Link to="/preview">
-        <Button
-          disabled={letterHTML || answers.length === 0}
-          primary
-          text="Preview"
-        />
+        <Button disabled={letterHTML === ''} primary text="Preview" />
       </Link>
     </div>
   </Layout>
