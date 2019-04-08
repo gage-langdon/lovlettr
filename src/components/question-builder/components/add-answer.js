@@ -19,8 +19,7 @@ const AddAnswer = ({
       onSubmit={e => {
         e.preventDefault();
         if (answerInputText !== '') {
-          answers.push(answerItemCreate(answerInputText));
-          onAnswerSubmit();
+          onAnswerSubmit(answerItemCreate(answerInputText));
         }
       }}
     >
@@ -43,12 +42,8 @@ const AddAnswer = ({
           <Button
             className="button-secondary"
             text="Submit"
-            onClick={() => {
-              if (answerInputText !== '') {
-                answers.push(answerItemCreate(answerInputText));
-                onAnswerSubmit();
-              }
-            }}
+            onClick={() => onAnswerSubmit(answerItemCreate(answerInputText))}
+            disabled={answerInputText === ''}
           />
         </div>
       </div>
