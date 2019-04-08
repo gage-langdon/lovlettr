@@ -71,7 +71,6 @@ const ComposePage = ({
     </div>
     <div className="d-flex justify-content-end mt-3 mr-2">
       <Link to="/preview">
-        {console.log(letterHTML)}
         <Button
           disabled={letterHTML === '' || letterHTML === '<p><br></p>'}
           primary
