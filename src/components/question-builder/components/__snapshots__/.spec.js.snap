@@ -13,7 +13,7 @@ exports[`Answer component Will only render with all props passed in 1`] = `
     hidden={false}
   >
     <div
-      className="d-inline-flex flex-column"
+      className="d-inline-flex flex-row"
     >
       <input
         className="input-answer-field"
@@ -22,11 +22,14 @@ exports[`Answer component Will only render with all props passed in 1`] = `
         placeholder="Absolutely!"
         value=""
       />
-      <sub
-        className="sub-text"
-      >
-        'enter' to submit
-      </sub>
+      <Button
+        className="button-secondary"
+        disabled={false}
+        onClick={[Function]}
+        primary={false}
+        text="Submit"
+        type="button"
+      />
     </div>
   </div>
 </form>
