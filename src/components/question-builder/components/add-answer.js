@@ -41,8 +41,8 @@ const AddAnswer = ({
           />
           <Button
             className="button-secondary"
+            type="submit"
             text="Submit"
-            onClick={() => onAnswerSubmit(answerItemCreate(answerInputText))}
             disabled={answerInputText === ''}
           />
         </div>
