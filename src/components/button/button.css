@@ -27,6 +27,11 @@
   border-style: none;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
+
+.button-preview {
+  height: 40px;
+  width: 160px;
+}
 button:hover {
   background-color: #fd466b;
 }

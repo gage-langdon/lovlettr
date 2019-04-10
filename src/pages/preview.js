@@ -5,6 +5,10 @@ import { redirect } from '../utilities/location';
 import Layout from '../components/layout';
 import Label from '../components/label';
 import Button from '../components/button';
+import './styles/preview.css';
+
+//images
+import Pages from '../images/pages.svg';
 
 // Redux
 import { connect } from 'react-redux';
@@ -12,22 +16,32 @@ import { bindActionCreators } from 'redux';
 import actions from '../redux/actions/compose';
 const mapStateToProps = ({ compose }) => ({ ...compose });
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
+/*
 
-const PreviewLetterPage = ({ letterHTML }) => {
+
+      <div className="question-container">{questionInputText}</div>
+      {answers.map(item => (
+        <div className="d-flex align-items-center" key={item.id}>
+          <label>{item.text}</label>
+        </div>
+      ))}
+*/
+const PreviewLetterPage = ({ letterHTML, answers, questionInputText }) => {
   // Preview page should redirect
-  if (!letterHTML) redirect('/');
+  if (letterHTML === '' || letterHTML === '<p><br></p>') redirect('/');
 
   return (
     <Layout>
       <Label cursive className="text-center">
         <h1>Preview</h1>
       </Label>
-      <hr />
-      <div
-        className="py-5 px-3"
-        dangerouslySetInnerHTML={{ __html: letterHTML }}
-      />
-      <hr />
+      <div className="pages-container">
+        <div
+          className="text-preview-field"
+          dangerouslySetInnerHTML={{ __html: letterHTML }}
+        />
+        <Pages className="pages" />
+      </div>
       <div className="d-flex flex-row justify-content-end align-items-center">
         <Link to="/compose" className="text-muted pr-3">
           Edit
