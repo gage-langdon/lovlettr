@@ -32,21 +32,25 @@ const PreviewLetterPage = ({ letterHTML, answers, questionInputText }) => {
 
   return (
     <Layout>
-      <Label cursive className="text-center">
-        <h1>Preview</h1>
-      </Label>
-      <div className="pages-container">
-        <div
-          className="text-preview-field"
-          dangerouslySetInnerHTML={{ __html: letterHTML }}
-        />
-        <Pages className="pages" />
-      </div>
-      <div className="d-flex flex-row justify-content-end align-items-center">
-        <Link to="/compose" className="text-muted pr-3">
-          Edit
-        </Link>
-        <Button primary text="Send" />
+      <div className="d-flex justify-content-center">
+        <div className="main-container">
+          <Label cursive className="d-flex align-self-center">
+            <h1>Preview</h1>
+          </Label>
+          <div className="pages-container">
+            <div
+              className="text-preview-field"
+              dangerouslySetInnerHTML={{ __html: letterHTML }}
+            />
+            <Pages className="pages" />
+          </div>
+          <div className="send-button-container">
+            <Link to="/compose" className="text-muted pr-3">
+              Edit
+            </Link>
+            <Button primary text="Send" />
+          </div>
+        </div>
       </div>
     </Layout>
   );

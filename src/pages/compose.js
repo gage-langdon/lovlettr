@@ -68,11 +68,11 @@ const ComposePage = ({
           setAnswerArray={setAnswerArray}
         />
       </div>
-    </div>
-    <div className="d-flex justify-content-end mt-3 mr-2">
-      <Link to="/preview">
-        <Button disabled={letterHTML === ''} primary text="Preview" />
-      </Link>
+      <div className="preview-button-container">
+        <Link to="/preview">
+          <Button disabled={letterHTML === ''} primary text="Preview" />
+        </Link>
+      </div>
     </div>
   </Layout>
 );

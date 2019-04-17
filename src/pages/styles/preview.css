@@ -7,8 +7,13 @@
   margin-top: 40px;
   overflow-wrap: break-word;
 }
-
+.pages {
+  position: relative;
+  z-index: -1;
+}
 .main-container {
+  display: flex;
+  flex-direction: column;
 }
 .answer-item {
   color: #2f2e41;
@@ -19,15 +24,13 @@
 .pages-container {
   display: flex;
   justify-content: center;
-  height: 425px;
-  width: 425px;
-  align-content: center;
-  margin: auto;
+  height: 415px;
+  width: 375px;
 }
 
-.pages {
-  position: relative;
-  z-index: -1;
+.send-button-container {
+  margin-left: 160px;
+  margin-top: 15px;
 }
 .question-container {
   border: #707070 solid 1px;
