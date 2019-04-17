@@ -37,6 +37,15 @@ const PreviewLetterPage = ({ letterHTML, answers, questionInputText }) => {
           </div>
           <div hidden={!questionInputText}>
             <div className="question-container">{questionInputText}</div>
+            <div className="answer-container">
+              {answers.map(item => (
+                <Button
+                  className="button-square"
+                  key={item.id}
+                  text={item.text}
+                />
+              ))}
+            </div>
             <Box className="box" />
           </div>
           <div className="send-button-container">

@@ -44,6 +44,6 @@ TextEditor.defaultProps = {
 TextEditor.propTypes = {
   letterHTML: PropTypes.string,
   placeholder: PropTypes.string,
-  onLetterChange: PropTypes.func.isRequired
+  onLetterChange: PropTypes.func
 };
 export default TextEditor;

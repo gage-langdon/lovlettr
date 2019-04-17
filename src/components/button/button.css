@@ -28,6 +28,19 @@
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
+.button-square {
+  background-color: #ff6584;
+  height: 35px;
+  max-height: 100;
+  color: #ffffffe6;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  opacity: 90%;
+  outline: 0 !important;
+  border-style: none;
+}
+
 .button-preview {
   height: 40px;
   width: 160px;
