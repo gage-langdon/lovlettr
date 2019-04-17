@@ -55,23 +55,25 @@ const ComposePage = ({
       <Label cursive>Question</Label>
     </div>
     <div className="d-flex justify-content-center">
-      <div hidden={questionBuilderTick}>
-        <QuestionBuilder
-          onQuestionChange={onQuestionChange}
-          questionInputText={questionInputText}
-          onAnswerChange={onAnswerChange}
-          answerInputText={answerInputText}
-          onAnswerButtonClick={onAnswerButtonClick}
-          onAnswerSubmit={onAnswerSubmit}
-          hiddenAddAnswer={hiddenAddAnswer}
-          answers={answers}
-          setAnswerArray={setAnswerArray}
-        />
-      </div>
-      <div className="preview-button-container">
-        <Link to="/preview">
-          <Button disabled={letterHTML === ''} primary text="Preview" />
-        </Link>
+      <div className="d-flex flex-column align-content-center">
+        <div hidden={questionBuilderTick}>
+          <QuestionBuilder
+            onQuestionChange={onQuestionChange}
+            questionInputText={questionInputText}
+            onAnswerChange={onAnswerChange}
+            answerInputText={answerInputText}
+            onAnswerButtonClick={onAnswerButtonClick}
+            onAnswerSubmit={onAnswerSubmit}
+            hiddenAddAnswer={hiddenAddAnswer}
+            answers={answers}
+            setAnswerArray={setAnswerArray}
+          />
+        </div>
+        <div className="preview-button-container">
+          <Link to="/preview">
+            <Button disabled={letterHTML === ''} primary text="Preview" />
+          </Link>
+        </div>
       </div>
     </div>
   </Layout>

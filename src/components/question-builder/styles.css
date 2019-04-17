@@ -1,8 +1,8 @@
 .input-question-field {
   border: #707070 solid 1px;
   border-radius: 17px 17px 17px 0px;
-  min-height: 53px;
-  min-width: 317px;
+  height: 53px;
+  width: 317px;
   text-align: center;
   font-size: 15px;
   color: #2f2e41;

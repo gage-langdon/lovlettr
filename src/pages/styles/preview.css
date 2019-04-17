@@ -6,6 +6,13 @@
   position: relative;
   z-index: -1;
 }
+
+.box {
+  position: relative;
+  z-index: -1;
+  margin-top: 25px;
+  margin-left: 47px;
+}
 .main-container {
   display: flex;
   flex-direction: column;
@@ -28,9 +35,15 @@
   margin-top: 15px;
 }
 .question-container {
-  border: #707070 solid 1px;
-  border-radius: 0px 0px 17px 17px;
-  min-height: 40px;
-  width: 317px;
-  margin-top: 3px;
+  position: absolute;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 240px;
+  height: 35px;
+  margin-top: 47px;
+  margin-left: 67px;
+  text-align: center;
+  color: #2f2e41;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
 }

@@ -39,7 +39,7 @@ const AddAnswer = ({
             placeholder={'Absolutely!'}
             value={answerInputText}
             onChange={e => onAnswerChange(e.target.value)}
-            maxLength="18"
+            maxLength={16}
           />
           <Button
             className="button-secondary"

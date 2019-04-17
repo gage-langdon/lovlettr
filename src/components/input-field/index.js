@@ -10,6 +10,7 @@ const Input = ({ onChange, value, placeholder, className, disabled }) => {
       value={value}
       onChange={e => onChange(e.target.value)}
       disabled={disabled}
+      maxLength={40}
     />
   );
 };
