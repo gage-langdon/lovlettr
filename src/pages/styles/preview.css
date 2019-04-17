@@ -1,11 +1,6 @@
 .text-preview-field {
   position: absolute;
-  text-align: center;
-  border: #707070 solid 1px;
-  min-height: 275px;
-  width: 275px;
-  margin-top: 40px;
-  overflow-wrap: break-word;
+  margin-top: 20px;
 }
 .pages {
   position: relative;

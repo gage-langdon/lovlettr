@@ -13,18 +13,25 @@ class TextEditor extends React.Component {
     this.forceUpdate();
   }
   render() {
-    const { onLetterChange, placeholder, letterHTML } = this.props;
+    const { onLetterChange, placeholder, letterHTML, preview } = this.props;
     return (
       <div className=" d-flex flex-column align-items-center">
-        <div className="text-editor-container">
+        <div
+          className={`${
+            preview ? 'preview-container' : 'text-editor-container'
+          }`}
+        >
           <ReactQuill
             theme="bubble"
             placeholder={placeholder}
             onChange={onLetterChange}
             value={letterHTML}
+            readOnly={preview}
           />
         </div>
-        <sub className="mt-2">select text to view formatting</sub>
+        <sub className="mt-2" hidden={preview}>
+          select text to view formatting
+        </sub>
       </div>
     );
   }

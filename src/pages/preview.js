@@ -5,6 +5,7 @@ import { redirect } from '../utilities/location';
 import Layout from '../components/layout';
 import Label from '../components/label';
 import Button from '../components/button';
+import TextEditor from '../components/text-editor/index.js';
 import './styles/preview.css';
 
 //images
@@ -25,6 +26,12 @@ const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
           <label>{item.text}</label>
         </div>
       ))}
+
+      overflow-y: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  line-height: 20px;
 */
 const PreviewLetterPage = ({ letterHTML, answers, questionInputText }) => {
   // Preview page should redirect
@@ -38,10 +45,9 @@ const PreviewLetterPage = ({ letterHTML, answers, questionInputText }) => {
             <h1>Preview</h1>
           </Label>
           <div className="pages-container">
-            <div
-              className="text-preview-field"
-              dangerouslySetInnerHTML={{ __html: letterHTML }}
-            />
+            <div className="text-preview-field">
+              <TextEditor preview letterHTML={letterHTML} />
+            </div>
             <Pages className="pages" />
           </div>
           <div className="send-button-container">
