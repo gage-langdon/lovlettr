@@ -42,6 +42,16 @@
   border-style: none;
 }
 
+.button-square:hover {
+  background-color: #fff2fb;
+  color: black;
+}
+
+.button-square:focus {
+  background-color: #fff2fb;
+  color: black;
+}
+
 .button-preview {
   height: 40px;
   width: 160px;
