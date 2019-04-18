@@ -29,11 +29,12 @@
 }
 
 .button-square {
-  background-color: #ff6584;
-  height: 35px;
-  max-height: 100;
+  background-color: #e2a4e4;
+  height: 100px;
+  max-height: 35;
+  margin-bottom: 2px;
   color: #ffffffe6;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: -1px;
   opacity: 90%;
