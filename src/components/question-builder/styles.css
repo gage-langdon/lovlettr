@@ -1,8 +1,8 @@
-.input-question-field {
+.input-question {
   border: #707070 solid 1px;
   border-radius: 17px 17px 17px 0px;
-  height: 53px;
-  width: 317px;
+  min-height: 53px;
+  min-width: 317px;
   text-align: center;
   font-size: 15px;
   color: #2f2e41;
@@ -13,25 +13,26 @@
   outline: 0 !important;
 }
 
-.add-answer-button {
-  color: #2f2e41;
-  opacity: 0.83;
-  font-size: 15px;
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: bold;
+.answers-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 317px;
+}
+.answer-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 275px;
 }
 
 .answer-item {
   color: #2f2e41;
   font-family: 'Segoe UI', sans-serif;
   font-weight: bold;
-  margin-left: 5px;
 }
 
 .answer-item-x {
-  margin-top: 8px;
-  margin-right: 30px;
-  margin-left: auto;
+  margin-top: 7px;
 }
 
 .input-answer-field {
@@ -47,13 +48,11 @@
   outline: 0 !important;
   margin-bottom: 7px;
 }
-
-.answer-container {
-  display: flex;
-  margin-left: 30px;
-  max-width: 350px;
-}
-
-.sub-text {
-  margin-left: 45px;
+.add-answer-button {
+  color: #2f2e41;
+  opacity: 0.83;
+  font-size: 15px;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  margin-left: 27px;
 }

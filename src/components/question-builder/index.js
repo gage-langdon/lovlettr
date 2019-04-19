@@ -34,19 +34,19 @@ const QuestionBuilder = ({
   };
 
   return (
-    <div className="d-flex flex-column">
+    <div>
       <InputField
-        className="input-question-field"
+        className="input-question"
         placeholder={'Will you go on a date with me?'}
         onChange={onQuestionChange}
         value={questionInputText}
         disabled={!(answers.length === 0)}
       />
-      <div className="d-flex flex-column">
+      <div className="answers-container">
         {answers.length === 0
           ? null
           : answers.map(item => (
-              <div className="answer-container" key={item.id}>
+              <div className="answer-item-container" key={item.id}>
                 <label className="answer-item">{item.text}</label>
                 <Delete
                   className="answer-item-x"
@@ -54,18 +54,18 @@ const QuestionBuilder = ({
                 />
               </div>
             ))}
-        <AddAnswer
-          label={'+ add answer'}
-          hidden={hiddenAddAnswer}
-          answerInputText={answerInputText}
-          onAnswerChange={onAnswerChange}
-          onAnswerSubmit={onAnswerSubmit}
-          onAnswerButtonClick={onAnswerButtonClick}
-          answers={answers}
-          answerItemCreate={answerItemCreate}
-          disabled={questionInputText === ''}
-        />
       </div>
+      <AddAnswer
+        label={'+ add answer'}
+        hidden={hiddenAddAnswer}
+        answerInputText={answerInputText}
+        onAnswerChange={onAnswerChange}
+        onAnswerSubmit={onAnswerSubmit}
+        onAnswerButtonClick={onAnswerButtonClick}
+        answers={answers}
+        answerItemCreate={answerItemCreate}
+        disabled={questionInputText === ''}
+      />
     </div>
   );
 };
