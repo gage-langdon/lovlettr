@@ -15,8 +15,9 @@ export default {
     payload: value
   }),
 
-  onAnswerSubmit: () => ({
-    type: TYPES.ANSWER_ONSUBMIT
+  onAnswerSubmit: value => ({
+    type: TYPES.ANSWER_ONSUBMIT,
+    payload: value
   }),
 
   onAnswerButtonClick: () => ({
