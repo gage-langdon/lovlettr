@@ -95,7 +95,6 @@ const ComposePage = ({
           text="Preview"
         />
       </Link>
-      {console.log(letterHTML)}
     </div>
   </Layout>
 );

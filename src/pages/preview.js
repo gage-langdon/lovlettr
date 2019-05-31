@@ -22,7 +22,6 @@ const PreviewLetterPage = ({
   questionInputText,
   answers
 }) => {
-  // Preview page should redirect
   if (!letterHTML) redirect('/');
 
   return (
@@ -48,8 +47,7 @@ const PreviewLetterPage = ({
               userEmail,
               letterHTML,
               questionInputText,
-              answers,
-              response: 'no response'
+              answers
             })
           }
         />
