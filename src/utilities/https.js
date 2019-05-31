@@ -1,11 +1,3 @@
-/*
-endpoints:
-  POST - https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/create
-  GET - https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/{letterId}
-  DELETE - https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/delete
-  PUT - https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/update
-*/
-
 const axios = require('axios');
 
 export async function getLtr(letterId) {
