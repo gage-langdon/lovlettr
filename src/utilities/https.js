@@ -1,24 +1,32 @@
 /*
 endpoints:
-  POST - https://vph540u747.execute-api.us-east-1.amazonaws.com/dev/ltr/create
-  GET - https://vph540u747.execute-api.us-east-1.amazonaws.com/dev/ltr/{id}
+POST - https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/create
+GET - https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/{letterId}
+DELETE - https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/delete
+PUT - https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/update
 */
+
 const axios = require('axios');
 
-export const get = async id => {
-  const response = await axios.get(
-    `https://vph540u747.execute-api.us-east-1.amazonaws.com/dev/ltr/${id}`
-  );
-  return response;
-};
+export async function getLtr(letterId) {
+  try {
+    const response = await axios.get(
+      `https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/${letterId}`
+    );
+    console.log(response);
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-export const post = async ({ email, letterHTML }) => {
-  const data = {
-    body: { letterHTML, email }
-  };
-  const response = await axios.post(
-    'https://vph540u747.execute-api.us-east-1.amazonaws.com/dev/ltr/create',
-    data
-  );
-  return response;
-};
+export async function postLtr(body) {
+  try {
+    const response = await axios.post(
+      'https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/create',
+      body
+    );
+    console.log(response);
+  } catch (err) {
+    console.log(err);
+  }
+}

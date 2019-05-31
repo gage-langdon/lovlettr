@@ -7,7 +7,8 @@ const initialState = {
   hiddenAddAnswer: false,
   answers: [],
   questionBuilderTick: true,
-  textEditorTick: false
+  textEditorTick: false,
+  userEmail: ''
 };
 
 export default function(state = initialState, action) {
@@ -63,6 +64,12 @@ export default function(state = initialState, action) {
         questionBuilderTick: !state.questionBuilderTick,
         answers: [],
         questionInputText: ''
+      };
+    }
+    case TYPES.EDIT_EMAIL: {
+      return {
+        ...state,
+        userEmail: action.payload
       };
     }
     default:

@@ -15,6 +15,11 @@ export default {
     payload: value
   }),
 
+  onEmailChange: value => ({
+    type: TYPES.EDIT_EMAIL,
+    payload: value
+  }),
+
   onAnswerSubmit: () => ({
     type: TYPES.ANSWER_ONSUBMIT
   }),

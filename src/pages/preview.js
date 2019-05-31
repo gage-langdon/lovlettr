@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { redirect } from '../utilities/location';
 
+//utils
+import { postLtr } from '../utilities/https';
+
 import Layout from '../components/layout';
 import Label from '../components/label';
 import Button from '../components/button';
@@ -13,7 +16,7 @@ import actions from '../redux/actions/compose';
 const mapStateToProps = ({ compose }) => ({ ...compose });
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-const PreviewLetterPage = ({ letterHTML }) => {
+const PreviewLetterPage = ({ letterHTML, userEmail }) => {
   // Preview page should redirect
   if (!letterHTML) redirect('/');
 
@@ -32,7 +35,11 @@ const PreviewLetterPage = ({ letterHTML }) => {
         <Link to="/compose" className="text-muted pr-3">
           Edit
         </Link>
-        <Button primary text="Send" />
+        <Button
+          primary
+          text="Send"
+          onClick={() => postLtr({ userEmail, letterHTML })}
+        />
       </div>
     </Layout>
   );
