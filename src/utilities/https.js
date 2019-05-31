@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 export async function getLtr(letterId) {
   try {
@@ -13,6 +13,7 @@ export async function getLtr(letterId) {
 
 export async function postLtr(body) {
   try {
+    if (body.questionInputText === '') body.questionInputText = undefined;
     const response = await axios.post(
       'https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/create',
       body
@@ -25,6 +26,7 @@ export async function postLtr(body) {
 
 export async function editLtr(body) {
   try {
+    if (body.questionInputText === '') body.questionInputText = undefined;
     const response = await axios.put(
       'https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/update',
       body
