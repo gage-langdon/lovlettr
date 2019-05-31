@@ -44,7 +44,13 @@ const PreviewLetterPage = ({
           primary
           text="Send"
           onClick={() =>
-            postLtr({ userEmail, letterHTML, questionInputText, answers })
+            postLtr({
+              userEmail,
+              letterHTML,
+              questionInputText,
+              answers,
+              response: 'no response'
+            })
           }
         />
       </div>
