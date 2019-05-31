@@ -16,7 +16,12 @@ import actions from '../redux/actions/compose';
 const mapStateToProps = ({ compose }) => ({ ...compose });
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-const PreviewLetterPage = ({ letterHTML, userEmail }) => {
+const PreviewLetterPage = ({
+  letterHTML,
+  userEmail,
+  questionInputText,
+  answers
+}) => {
   // Preview page should redirect
   if (!letterHTML) redirect('/');
 
@@ -38,7 +43,9 @@ const PreviewLetterPage = ({ letterHTML, userEmail }) => {
         <Button
           primary
           text="Send"
-          onClick={() => postLtr({ userEmail, letterHTML })}
+          onClick={() =>
+            postLtr({ userEmail, letterHTML, questionInputText, answers })
+          }
         />
       </div>
     </Layout>
