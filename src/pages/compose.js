@@ -53,19 +53,16 @@ const ComposePage = ({
       where you will recieve the response
     </sub>
     <div className="text-editor-header">
-      <Checkbox onClick={onTextEditorTick} hidden={textEditorTick} />
       <Label cursive className="text-center">
         Your letter
       </Label>
     </div>
-    <div hidden={textEditorTick}>
-      <div className="d-flex justify-content-center">
-        <TextEditor
-          onLetterChange={e => onLetterChange(e)}
-          placeholder="enter how you feel"
-          letterHTML={letterHTML}
-        />
-      </div>
+    <div className="d-flex justify-content-center">
+      <TextEditor
+        onLetterChange={e => onLetterChange(e)}
+        placeholder="enter how you feel"
+        letterHTML={letterHTML}
+      />
     </div>
     <div className="question-header">
       <Checkbox onClick={onQuestionTick} hidden={questionBuilderTick} />
@@ -88,8 +85,17 @@ const ComposePage = ({
     </div>
     <div className="d-flex justify-content-end mt-3 mr-2">
       <Link to="/preview">
-        <Button disabled={letterHTML === ''} primary text="Preview" />
+        <Button
+          disabled={
+            userEmail === '' ||
+            letterHTML === '<p><br></p>' ||
+            letterHTML === ''
+          }
+          primary
+          text="Preview"
+        />
       </Link>
+      {console.log(letterHTML)}
     </div>
   </Layout>
 );
