@@ -14,15 +14,13 @@ const AddAnswer = ({
   answerItemCreate,
   disabled
 }) => {
-  const submitHandler = () => {
-    if (answerInputText !== '') answers.push(answerItemCreate(answerInputText));
-  };
   return (
     <form
       onSubmit={e => {
         e.preventDefault();
-        onAnswerSubmit();
-        submitHandler();
+        if (answerInputText !== '') {
+          onAnswerSubmit(answerItemCreate(answerInputText));
+        }
       }}
     >
       <label
@@ -43,8 +41,9 @@ const AddAnswer = ({
           />
           <Button
             className="button-secondary"
+            type="submit"
             text="Submit"
-            onClick={() => (submitHandler(), onAnswerSubmit())}
+            disabled={answerInputText === ''}
           />
         </div>
       </div>

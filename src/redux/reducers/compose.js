@@ -42,7 +42,8 @@ export default function(state = initialState, action) {
       return {
         ...state,
         hiddenAddAnswer: false,
-        answerInputText: ''
+        answerInputText: '',
+        answers: [...state.answers, action.payload]
       };
     }
     case TYPES.SET_ANSWER_ARRAY: {

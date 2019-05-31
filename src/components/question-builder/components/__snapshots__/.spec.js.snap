@@ -24,11 +24,10 @@ exports[`Answer component Will only render with all props passed in 1`] = `
       />
       <Button
         className="button-secondary"
-        disabled={false}
-        onClick={[Function]}
+        disabled={true}
         primary={false}
         text="Submit"
-        type="button"
+        type="submit"
       />
     </div>
   </div>
