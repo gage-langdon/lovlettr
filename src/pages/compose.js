@@ -7,6 +7,7 @@ import Label from '../components/label';
 import Button from '../components/button';
 import TextEditor from '../components/text-editor/index.js';
 import QuestionBuilder from '../components/question-builder/index';
+import Input from '../components/input-field';
 import Checkbox from '../components/checkbox';
 import './styles/compose.css';
 
@@ -20,6 +21,8 @@ const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 const ComposePage = ({
   onLetterChange,
   letterHTML,
+  userEmail,
+  onEmailChange,
   onQuestionChange,
   questionInputText,
   onAnswerChange,
@@ -35,20 +38,31 @@ const ComposePage = ({
   textEditorTick
 }) => (
   <Layout>
+    <div className="email-input-header">
+      <Label cursive>Email</Label>
+    </div>
+    <div className="d-flex justify-content-center">
+      <Input
+        className="email-input"
+        onChange={onEmailChange}
+        placeholder="enter your email"
+        value={userEmail}
+      />
+    </div>
+    <sub className="d-flex justify-content-center mt-2">
+      where you will recieve the response
+    </sub>
     <div className="text-editor-header">
-      <Checkbox onClick={onTextEditorTick} hidden={textEditorTick} />
       <Label cursive className="text-center">
         Your letter
       </Label>
     </div>
-    <div hidden={textEditorTick}>
-      <div className="d-flex justify-content-center">
-        <TextEditor
-          onLetterChange={e => onLetterChange(e)}
-          placeholder="enter how you feel"
-          letterHTML={letterHTML}
-        />
-      </div>
+    <div className="d-flex justify-content-center">
+      <TextEditor
+        onLetterChange={e => onLetterChange(e)}
+        placeholder="enter how you feel"
+        letterHTML={letterHTML}
+      />
     </div>
     <div className="question-header">
       <Checkbox onClick={onQuestionTick} hidden={questionBuilderTick} />
@@ -72,7 +86,11 @@ const ComposePage = ({
     <div className="d-flex justify-content-end mt-3 mr-2">
       <Link to="/preview">
         <Button
-          disabled={letterHTML === '' || letterHTML === '<p><br></p>'}
+          disabled={
+            userEmail === '' ||
+            letterHTML === '<p><br></p>' ||
+            letterHTML === ''
+          }
           primary
           text="Preview"
         />
