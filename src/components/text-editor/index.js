@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './styles.css';
-import 'react-quill/dist/quill.bubble.css';
+import './quill.bubble.css';
 var ReactQuill = () => null; // mock for ssr
 
 class TextEditor extends React.Component {

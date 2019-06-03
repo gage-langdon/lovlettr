@@ -12,7 +12,8 @@ const AddAnswer = ({
   onAnswerButtonClick,
   answers,
   answerItemCreate,
-  disabled
+  disabled,
+  questionInputText
 }) => {
   return (
     <form
@@ -25,6 +26,7 @@ const AddAnswer = ({
     >
       <label
         className="add-answer-button"
+        disabled={questionInputText === ''}
         hidden={hidden || answers.length === 3}
         onClick={() => (!disabled ? onAnswerButtonClick() : null)}
       >
@@ -32,19 +34,24 @@ const AddAnswer = ({
       </label>
       <div hidden={!hidden}>
         <div className="d-inline-flex flex-row">
-          <input
-            className="input-answer-field"
-            placeholder={'Absolutely!'}
-            value={answerInputText}
-            onChange={e => onAnswerChange(e.target.value)}
-            maxLength="18"
-          />
-          <Button
-            className="button-secondary"
-            type="submit"
-            text="Submit"
-            disabled={answerInputText === ''}
-          />
+          {!hidden ? null : (
+            <div>
+              <input
+                className="input-answer-field"
+                autoFocus={true}
+                placeholder={'Absolutely!'}
+                value={answerInputText}
+                onChange={e => onAnswerChange(e.target.value)}
+                maxLength="18"
+              />
+              <Button
+                className="button-secondary"
+                type="submit"
+                text="Submit"
+                disabled={answerInputText === ''}
+              />
+            </div>
+          )}
         </div>
       </div>
     </form>

@@ -4,12 +4,16 @@ exports[`Question component Will only render with all props passed in 1`] = `
 <div
   className="d-flex flex-column"
 >
-  <Input
-    className="input-question-field"
-    disabled={false}
-    placeholder="Will you go on a date with me?"
-    value=""
-  />
+  <form
+    onSubmit={[Function]}
+  >
+    <Input
+      className="input-question-field"
+      disabled={false}
+      placeholder="Will you go on a date with me?"
+      value=""
+    />
+  </form>
   <div
     className="d-flex flex-column"
   >
@@ -20,6 +24,7 @@ exports[`Question component Will only render with all props passed in 1`] = `
       disabled={true}
       hidden={true}
       label="+ add answer"
+      questionInputText=""
     />
   </div>
 </div>
