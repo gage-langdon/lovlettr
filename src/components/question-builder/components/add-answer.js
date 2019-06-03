@@ -12,7 +12,8 @@ const AddAnswer = ({
   onAnswerButtonClick,
   answers,
   answerItemCreate,
-  disabled
+  disabled,
+  questionInputText
 }) => {
   return (
     <form
@@ -25,6 +26,7 @@ const AddAnswer = ({
     >
       <label
         className="add-answer-button"
+        disabled={questionInputText === ''}
         hidden={hidden || answers.length === 3}
         onClick={() => (!disabled ? onAnswerButtonClick() : null)}
       >

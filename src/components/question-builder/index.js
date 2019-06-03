@@ -71,6 +71,7 @@ const QuestionBuilder = ({
           answers={answers}
           answerItemCreate={answerItemCreate}
           disabled={questionInputText === ''}
+          questionInputText={questionInputText}
         />
       </div>
     </div>
