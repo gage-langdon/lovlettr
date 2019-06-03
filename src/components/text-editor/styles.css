@@ -1,7 +1,8 @@
 .text-editor-container {
   border: #707070 solid 1px;
   border-radius: 17px 17px 17px 0px;
-  min-height: 275px;
+  height: 275px;
   width: 317px;
+  overflow-y: scroll;
   margin-top: 3px;
 }
