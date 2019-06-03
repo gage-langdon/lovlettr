@@ -7,7 +7,6 @@ const initialState = {
   hiddenAddAnswer: false,
   answers: [],
   questionBuilderTick: false,
-  textEditorTick: false,
   userEmail: ''
 };
 
@@ -52,19 +51,10 @@ export default function(state = initialState, action) {
         answers: action.payload
       };
     }
-    case TYPES.SET_TICK_EDITOR: {
-      return {
-        ...state,
-        textEditorTick: !state.textEditorTick,
-        letterHTML: ''
-      };
-    }
     case TYPES.SET_TICK_QUESTION: {
       return {
         ...state,
-        questionBuilderTick: !state.questionBuilderTick,
-        answers: [],
-        questionInputText: ''
+        questionBuilderTick: !state.questionBuilderTick
       };
     }
     case TYPES.EDIT_EMAIL: {
