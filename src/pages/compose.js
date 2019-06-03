@@ -33,9 +33,7 @@ const ComposePage = ({
   answers,
   setAnswerArray,
   onQuestionTick,
-  questionBuilderTick,
-  onTextEditorTick,
-  textEditorTick
+  questionBuilderTick
 }) => (
   <Layout>
     <div className="email-input-header">
