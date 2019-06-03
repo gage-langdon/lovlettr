@@ -15,7 +15,7 @@ class TextEditor extends React.Component {
   render() {
     const { onLetterChange, placeholder, letterHTML } = this.props;
     return (
-      <div className=" d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center">
         <div className="text-editor-container">
           <ReactQuill
             theme="bubble"
@@ -24,7 +24,7 @@ class TextEditor extends React.Component {
             value={letterHTML}
           />
         </div>
-        <sub className="mt-2">select text to view formatting</sub>
+        <sub className="subtext">select text to view formatting</sub>
       </div>
     );
   }
