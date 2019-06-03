@@ -36,8 +36,5 @@ export default {
 
   onQuestionTick: () => ({
     type: TYPES.SET_TICK_QUESTION
-  }),
-  onTextEditorTick: () => ({
-    type: TYPES.SET_TICK_EDITOR
   })
 };

@@ -46,7 +46,6 @@ const QuestionBuilder = ({
           placeholder={'Will you go on a date with me?'}
           onChange={onQuestionChange}
           value={questionInputText}
-          disabled={!(answers.length === 0)}
         />
       </form>
       <div className="d-flex flex-column">
