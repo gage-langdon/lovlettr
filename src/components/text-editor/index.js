@@ -29,7 +29,9 @@ class TextEditor extends React.Component {
             readOnly={preview}
           />
         </div>
-        <sub className="subtext">select text to view formatting</sub>
+        <sub hidden={preview} className="subtext">
+          select text to view formatting
+        </sub>
       </div>
     );
   }
