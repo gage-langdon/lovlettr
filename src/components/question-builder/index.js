@@ -35,13 +35,20 @@ const QuestionBuilder = ({
 
   return (
     <div className="d-flex flex-column">
-      <InputField
-        className="input-question-field"
-        placeholder={'Will you go on a date with me?'}
-        onChange={onQuestionChange}
-        value={questionInputText}
-        disabled={!(answers.length === 0)}
-      />
+      <form
+        onSubmit={e => {
+          e.preventDefault();
+          if (questionInputText !== '') onAnswerButtonClick();
+        }}
+      >
+        <InputField
+          className="input-question-field"
+          placeholder={'Will you go on a date with me?'}
+          onChange={onQuestionChange}
+          value={questionInputText}
+          disabled={!(answers.length === 0)}
+        />
+      </form>
       <div className="d-flex flex-column">
         {answers.length === 0
           ? null
