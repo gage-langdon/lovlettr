@@ -34,15 +34,21 @@ const QuestionBuilder = ({
   };
 
   return (
-    <div>
-      <InputField
-        className="input-question"
-        placeholder={'Will you go on a date with me?'}
-        onChange={onQuestionChange}
-        value={questionInputText}
-        disabled={!(answers.length === 0)}
-      />
-      <div className="answers-container">
+    <div className="d-flex flex-column">
+      <form
+        onSubmit={e => {
+          e.preventDefault();
+          if (questionInputText !== '') onAnswerButtonClick();
+        }}
+      >
+        <InputField
+          className="input-question-field"
+          placeholder={'Will you go on a date with me?'}
+          onChange={onQuestionChange}
+          value={questionInputText}
+        />
+      </form>
+      <div className="d-flex flex-column">
         {answers.length === 0
           ? null
           : answers.map(item => (
@@ -54,18 +60,19 @@ const QuestionBuilder = ({
                 />
               </div>
             ))}
+        <AddAnswer
+          label={'+ add answer'}
+          hidden={hiddenAddAnswer}
+          answerInputText={answerInputText}
+          onAnswerChange={onAnswerChange}
+          onAnswerSubmit={onAnswerSubmit}
+          onAnswerButtonClick={onAnswerButtonClick}
+          answers={answers}
+          answerItemCreate={answerItemCreate}
+          disabled={questionInputText === ''}
+          questionInputText={questionInputText}
+        />
       </div>
-      <AddAnswer
-        label={'+ add answer'}
-        hidden={hiddenAddAnswer}
-        answerInputText={answerInputText}
-        onAnswerChange={onAnswerChange}
-        onAnswerSubmit={onAnswerSubmit}
-        onAnswerButtonClick={onAnswerButtonClick}
-        answers={answers}
-        answerItemCreate={answerItemCreate}
-        disabled={questionInputText === ''}
-      />
     </div>
   );
 };

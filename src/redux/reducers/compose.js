@@ -6,8 +6,8 @@ const initialState = {
   answerInputText: '',
   hiddenAddAnswer: false,
   answers: [],
-  questionBuilderTick: true,
-  textEditorTick: false
+  questionBuilderTick: false,
+  userEmail: ''
 };
 
 export default function(state = initialState, action) {
@@ -41,7 +41,8 @@ export default function(state = initialState, action) {
       return {
         ...state,
         hiddenAddAnswer: false,
-        answerInputText: ''
+        answerInputText: '',
+        answers: [...state.answers, action.payload]
       };
     }
     case TYPES.SET_ANSWER_ARRAY: {
@@ -50,19 +51,16 @@ export default function(state = initialState, action) {
         answers: action.payload
       };
     }
-    case TYPES.SET_TICK_EDITOR: {
-      return {
-        ...state,
-        textEditorTick: !state.textEditorTick,
-        letterHTML: ''
-      };
-    }
     case TYPES.SET_TICK_QUESTION: {
       return {
         ...state,
-        questionBuilderTick: !state.questionBuilderTick,
-        answers: [],
-        questionInputText: ''
+        questionBuilderTick: !state.questionBuilderTick
+      };
+    }
+    case TYPES.EDIT_EMAIL: {
+      return {
+        ...state,
+        userEmail: action.payload
       };
     }
     default:

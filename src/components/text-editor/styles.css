@@ -4,11 +4,16 @@
   height: 275px;
   width: 317px;
   margin-top: 3px;
-  overflow-y: scroll;
 }
 
 .preview-container {
   height: 375px;
   width: 275px;
   overflow-y: scroll;
+}
+
+.subtext {
+  position: static;
+  z-index: -1;
+  padding-top: 7px;
 }

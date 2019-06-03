@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './styles.css';
-import 'react-quill/dist/quill.bubble.css';
+import './quill.bubble.css';
 var ReactQuill = () => null; // mock for ssr
 
 class TextEditor extends React.Component {
@@ -29,9 +29,7 @@ class TextEditor extends React.Component {
             readOnly={preview}
           />
         </div>
-        <sub className="mt-2" hidden={preview}>
-          select text to view formatting
-        </sub>
+        <sub className="subtext">select text to view formatting</sub>
       </div>
     );
   }

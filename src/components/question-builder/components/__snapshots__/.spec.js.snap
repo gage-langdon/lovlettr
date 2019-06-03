@@ -6,6 +6,7 @@ exports[`Answer component Will only render with all props passed in 1`] = `
 >
   <label
     className="add-answer-button"
+    disabled={false}
     hidden={true}
     onClick={[Function]}
   />
@@ -15,21 +16,23 @@ exports[`Answer component Will only render with all props passed in 1`] = `
     <div
       className="d-inline-flex flex-row"
     >
-      <input
-        className="input-answer-field"
-        maxLength="18"
-        onChange={[Function]}
-        placeholder="Absolutely!"
-        value=""
-      />
-      <Button
-        className="button-secondary"
-        disabled={false}
-        onClick={[Function]}
-        primary={false}
-        text="Submit"
-        type="button"
-      />
+      <div>
+        <input
+          autoFocus={true}
+          className="input-answer-field"
+          maxLength="18"
+          onChange={[Function]}
+          placeholder="Absolutely!"
+          value=""
+        />
+        <Button
+          className="button-secondary"
+          disabled={true}
+          primary={false}
+          text="Submit"
+          type="submit"
+        />
+      </div>
     </div>
   </div>
 </form>

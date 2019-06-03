@@ -15,8 +15,14 @@ export default {
     payload: value
   }),
 
-  onAnswerSubmit: () => ({
-    type: TYPES.ANSWER_ONSUBMIT
+  onEmailChange: value => ({
+    type: TYPES.EDIT_EMAIL,
+    payload: value
+  }),
+
+  onAnswerSubmit: value => ({
+    type: TYPES.ANSWER_ONSUBMIT,
+    payload: value
   }),
 
   onAnswerButtonClick: () => ({
@@ -30,8 +36,5 @@ export default {
 
   onQuestionTick: () => ({
     type: TYPES.SET_TICK_QUESTION
-  }),
-  onTextEditorTick: () => ({
-    type: TYPES.SET_TICK_EDITOR
   })
 };
