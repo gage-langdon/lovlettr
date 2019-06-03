@@ -12,6 +12,7 @@
   width: 310px;
   margin-left: 2px;
   margin-top: 2px;
+  overflow-x: hidden;
   position: relative;
 }
 .ql-container.ql-disabled .ql-tooltip {
@@ -40,7 +41,8 @@
   line-height: 1.42;
   height: 100%;
   outline: none;
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding: 12px 15px;
   tab-size: 4;
   -moz-tab-size: 4;
