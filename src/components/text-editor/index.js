@@ -13,7 +13,7 @@ class TextEditor extends React.Component {
     this.forceUpdate();
   }
   render() {
-    const { onLetterChange, placeholder, letterHTML, preview } = this.props;
+    const { onLetterChange, placeholder, letterHTML } = this.props;
     return (
       <div className=" d-flex flex-column align-items-center">
         <div
@@ -26,7 +26,6 @@ class TextEditor extends React.Component {
             placeholder={placeholder}
             onChange={onLetterChange}
             value={letterHTML}
-            readOnly={preview}
           />
         </div>
         <sub className="subtext">select text to view formatting</sub>

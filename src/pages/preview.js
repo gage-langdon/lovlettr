@@ -38,9 +38,10 @@ const PreviewLetterPage = ({
             <h1>Preview</h1>
           </Label>
           <div className="pages-container">
-            <div className="text-preview-field">
-              <TextEditor preview letterHTML={letterHTML} />
-            </div>
+            <div
+              className="text-preview-field"
+              dangerouslySetInnerHTML={{ __html: letterHTML }}
+            />
             <Pages className="pages" />
           </div>
           <div hidden={!questionInputText}>
