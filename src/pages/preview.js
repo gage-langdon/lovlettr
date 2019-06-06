@@ -26,7 +26,8 @@ const PreviewLetterPage = ({
   questionInputText,
   answers,
   setLtr,
-  ltr
+  ltr,
+  questionBuilderTick
 }) => {
   // Preview page should redirect
   if (letterHTML === '' || letterHTML === '<p><br></p>') redirect('/');
@@ -46,7 +47,7 @@ const PreviewLetterPage = ({
             />
             <Pages className="pages" />
           </div>
-          <div hidden={!questionInputText}>
+          <div hidden={questionBuilderTick}>
             <div className="question-container">{questionInputText}</div>
             <div className="answer-container">
               {answers.map(item => (
