@@ -8,7 +8,6 @@ import { postLtr } from '../utilities/https';
 import Layout from '../components/layout';
 import Label from '../components/label';
 import Button from '../components/button';
-import TextEditor from '../components/text-editor/index.js';
 import './styles/preview.css';
 
 //images

@@ -16,11 +16,7 @@ class TextEditor extends React.Component {
     const { onLetterChange, placeholder, letterHTML } = this.props;
     return (
       <div className=" d-flex flex-column align-items-center">
-        <div
-          className={`${
-            preview ? 'preview-container' : 'text-editor-container'
-          }`}
-        >
+        <div className="text-editor-container">
           <ReactQuill
             theme="bubble"
             placeholder={placeholder}
