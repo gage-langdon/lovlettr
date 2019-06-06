@@ -29,11 +29,11 @@
 }
 
 .button-square {
-  background-color: #e2a4e4;
+  background-color: #fff2fb;
   height: 100px;
   max-height: 35;
   margin-bottom: 2px;
-  color: #ffffffe6;
+  color: #2f2e41;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -1px;
@@ -43,12 +43,12 @@
 }
 
 .button-square:hover {
-  background-color: #fff2fb;
+  background-color: #ffe3f7;
   color: black;
 }
 
 .button-square:focus {
-  background-color: #fff2fb;
+  background-color: #ffe3f7;
   color: black;
 }
 

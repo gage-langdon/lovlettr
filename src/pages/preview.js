@@ -60,18 +60,20 @@ const PreviewLetterPage = ({
             <Link to="/compose" className="text-muted pr-3">
               Edit
             </Link>
-            <Button
-              primary
-              text="Send"
-              onClick={() =>
-                postLtr({
-                  userEmail,
-                  letterHTML,
-                  questionInputText,
-                  answers
-                })
-              }
-            />
+            <Link to="/letter">
+              <Button
+                primary
+                text="Send"
+                onClick={() =>
+                  postLtr({
+                    userEmail,
+                    letterHTML,
+                    questionInputText,
+                    answers
+                  })
+                }
+              />
+            </Link>
           </div>
         </div>
       </div>
