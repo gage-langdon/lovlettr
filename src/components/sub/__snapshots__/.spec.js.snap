@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sub component Will render with just text passed in 1`] = `
+<sub
+  className=""
+  hidden={false}
+>
+  test
+</sub>
+`;
