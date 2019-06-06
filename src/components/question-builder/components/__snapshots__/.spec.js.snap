@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Answer component Will only render with all props passed in 1`] = `
-<form
-  onSubmit={[Function]}
->
+<div>
   <label
     className="add-answer-button"
     disabled={false}
@@ -13,10 +11,12 @@ exports[`Answer component Will only render with all props passed in 1`] = `
   <div
     hidden={false}
   >
-    <div
-      className="d-inline-flex flex-row"
+    <form
+      onSubmit={[Function]}
     >
-      <div>
+      <div
+        className="d-inline-flex flex-row"
+      >
         <input
           autoFocus={true}
           className="input-answer-field"
@@ -26,14 +26,14 @@ exports[`Answer component Will only render with all props passed in 1`] = `
           value=""
         />
         <Button
-          className="button-secondary"
+          className="button-submit"
           disabled={true}
           primary={false}
           text="Submit"
           type="submit"
         />
       </div>
-    </div>
+    </form>
   </div>
-</form>
+</div>
 `;

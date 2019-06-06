@@ -4,6 +4,7 @@ exports[`Input field component Will render with no props 1`] = `
 <input
   className=""
   disabled={false}
+  maxLength={40}
   onChange={[Function]}
   placeholder=""
   type="text"
