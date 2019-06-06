@@ -81,35 +81,33 @@ const ComposePage = ({
       <Label cursive>Question</Label>
     </div>
     <div className="d-flex justify-content-center">
-      <div className="d-flex flex-column align-content-center">
-        <div hidden={questionBuilderTick}>
-          <QuestionBuilder
-            onQuestionChange={onQuestionChange}
-            questionInputText={questionInputText}
-            onAnswerChange={onAnswerChange}
-            answerInputText={answerInputText}
-            onAnswerButtonClick={onAnswerButtonClick}
-            onAnswerSubmit={onAnswerSubmit}
-            hiddenAddAnswer={hiddenAddAnswer}
-            answers={answers}
-            setAnswerArray={setAnswerArray}
-          />
-        </div>
-        <div className="d-flex justify-content-end mt-4">
-          <Link to="/preview">
-            <Button
-              disabled={
-                userEmail === '' ||
-                letterHTML === '<p><br></p>' ||
-                letterHTML === '' ||
-                !validEmail(userEmail)
-              }
-              primary
-              text="Preview"
-            />
-          </Link>
-        </div>
+      <div hidden={questionBuilderTick}>
+        <QuestionBuilder
+          onQuestionChange={onQuestionChange}
+          questionInputText={questionInputText}
+          onAnswerChange={onAnswerChange}
+          answerInputText={answerInputText}
+          onAnswerButtonClick={onAnswerButtonClick}
+          onAnswerSubmit={onAnswerSubmit}
+          hiddenAddAnswer={hiddenAddAnswer}
+          answers={answers}
+          setAnswerArray={setAnswerArray}
+        />
       </div>
+    </div>
+    <div className="button-container">
+      <Link to="/preview">
+        <Button
+          disabled={
+            userEmail === '' ||
+            letterHTML === '<p><br></p>' ||
+            letterHTML === '' ||
+            !validEmail(userEmail)
+          }
+          primary
+          text="Preview"
+        />
+      </Link>
     </div>
   </Layout>
 );
