@@ -24,10 +24,13 @@ const PreviewLetterPage = ({
   letterHTML,
   userEmail,
   questionInputText,
-  answers
+  answers,
+  setLtr,
+  ltr
 }) => {
   // Preview page should redirect
   if (letterHTML === '' || letterHTML === '<p><br></p>') redirect('/');
+  if (ltr !== '') redirect('/letter');
 
   return (
     <Layout>
@@ -60,20 +63,20 @@ const PreviewLetterPage = ({
             <Link to="/compose" className="text-muted pr-3">
               Edit
             </Link>
-            <Link to="/letter">
-              <Button
-                primary
-                text="Send"
-                onClick={() =>
-                  postLtr({
+            <Button
+              primary
+              text="Send"
+              onClick={async () =>
+                setLtr(
+                  await postLtr({
                     userEmail,
                     letterHTML,
                     questionInputText,
                     answers
                   })
-                }
-              />
-            </Link>
+                )
+              }
+            />
           </div>
         </div>
       </div>

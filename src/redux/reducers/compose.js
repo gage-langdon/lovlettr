@@ -7,7 +7,8 @@ const initialState = {
   hiddenAddAnswer: false,
   answers: [],
   questionBuilderTick: false,
-  userEmail: ''
+  userEmail: '',
+  ltr: ''
 };
 
 export default function(state = initialState, action) {
@@ -61,6 +62,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         userEmail: action.payload
+      };
+    }
+    case TYPES.SET_LTR: {
+      return {
+        ...state,
+        ltr: action.payload
       };
     }
     default:
