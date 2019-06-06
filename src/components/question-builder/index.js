@@ -48,6 +48,9 @@ const QuestionBuilder = ({
           value={questionInputText}
         />
       </form>
+      <sub className="question-sub-text" hidden={questionInputText !== ''}>
+        enter a question and then add some answers
+      </sub>
       <div className="d-flex flex-column">
         {answers.length === 0
           ? null

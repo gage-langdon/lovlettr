@@ -34,26 +34,24 @@ const AddAnswer = ({
             }
           }}
         >
-          <div className="d-inline-flex flex-row">
-            {!hidden ? null : (
-              <div>
-                <input
-                  className="input-answer-field"
-                  autoFocus={true}
-                  placeholder={'Absolutely!'}
-                  value={answerInputText}
-                  onChange={e => onAnswerChange(e.target.value)}
-                  maxLength="18"
-                />
-                <Button
-                  className="button-secondary"
-                  type="submit"
-                  text="Submit"
-                  disabled={answerInputText === ''}
-                />
-              </div>
-            )}
-          </div>
+          {!hidden ? null : (
+            <div className="d-inline-flex flex-row">
+              <input
+                className="input-answer-field"
+                autoFocus={true}
+                placeholder={'Absolutely!'}
+                value={answerInputText}
+                onChange={e => onAnswerChange(e.target.value)}
+                maxLength="18"
+              />
+              <Button
+                className="button-submit"
+                type="submit"
+                text="Submit"
+                disabled={answerInputText === ''}
+              />
+            </div>
+          )}
         </form>
       </div>
     </div>
