@@ -14,20 +14,21 @@ import Box from '../images/question-box.svg';
 import Couple from '../images/couple-illustration-1.svg';
 
 const LettrPage = props => {
-  console.log(props);
   const [ltr, setLtr] = useState();
+  const ltrId = props.location.pathname.replace('/letter/', '');
 
   useEffect(() => {
-    awaitLtr('37c1abb0-8819-11e9-b48e-d55d1f5ca6cf');
+    awaitLtr(ltrId);
   });
 
   async function awaitLtr(ltrId) {
     if (!ltr) {
-      const { data, status } = await getLtr(ltrId);
-      if (status !== 200) {
+      try {
+        const { data } = await getLtr(ltrId);
+        setLtr(data);
+      } catch (e) {
         redirect('/404');
       }
-      setLtr(data);
     }
   }
 
