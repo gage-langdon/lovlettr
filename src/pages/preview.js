@@ -31,7 +31,7 @@ const PreviewLetterPage = ({
 }) => {
   // Preview page should redirect
   if (letterHTML === '' || letterHTML === '<p><br></p>') redirect('/');
-  if (ltr !== '') redirect('/letter');
+  if (ltr !== '') redirect('/');
 
   return (
     <Layout>
