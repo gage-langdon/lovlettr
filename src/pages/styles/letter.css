@@ -1,6 +1,17 @@
-.letter-explanation {
+.letter-explanation-large {
   width: 280px;
-  height: 115px;
+  height: 110px;
+  font-size: 14px;
+  text-align: left;
+  color: #2f2e41;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  outline: 0 !important;
+}
+
+.letter-explanation-small {
+  width: 280px;
+  height: 65px;
   font-size: 14px;
   text-align: left;
   color: #2f2e41;

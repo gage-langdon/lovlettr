@@ -95,13 +95,13 @@ const LettrPage = props => {
             {ltr ? (
               <div className="d-flex flex-column justify-content-center mt-5">
                 <label
-                  className="letter-explanation"
+                  className="letter-explanation-small"
                   hidden={ltr.answers.length !== 0}
                 >
                   You were sent a love letter! Maybe send one back.
                 </label>
                 <label
-                  className="letter-explanation"
+                  className="letter-explanation-large"
                   hidden={ltr.answers.length === 0}
                 >
                   You were sent a love letter! There is a question below the
