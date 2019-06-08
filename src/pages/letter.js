@@ -8,6 +8,7 @@ import { redirect } from '../utilities/location';
 import Button from '../components/button';
 import Layout from '../components/layout';
 import Sub from '../components/sub';
+import { PulseLoader } from 'react-spinners';
 
 //images
 import Pages from '../images/pages.svg';
@@ -19,6 +20,8 @@ import './styles/letter.css';
 
 const LettrPage = props => {
   const [ltr, setLtr] = useState();
+  const [showLtr, revealLetter] = useState(false);
+
   const ltrId = props.location.pathname.replace('/letter/', '');
 
   useEffect(() => {
@@ -44,7 +47,7 @@ const LettrPage = props => {
     }
   }
 
-  if (ltr) {
+  if (showLtr) {
     const { questionInputText, answers, letterHTML } = ltr;
     return (
       <Layout>
@@ -84,7 +87,38 @@ const LettrPage = props => {
     return (
       <Layout>
         <div className="d-flex justify-content-center">
-          <Couple />
+          <div className="d-flex flex-column">
+            <Couple className="mt-2 ml-2" />
+            <div hidden={ltr} className="loader">
+              <PulseLoader color={'#ff6584'} />
+            </div>
+            {ltr ? (
+              <div className="d-flex flex-column justify-content-center mt-5">
+                <label
+                  className="letter-explanation"
+                  hidden={ltr.answers.length !== 0}
+                >
+                  You were sent a love letter! Maybe send one back.
+                </label>
+                <label
+                  className="letter-explanation"
+                  hidden={ltr.answers.length === 0}
+                >
+                  You were sent a love letter! There is a question below the
+                  letter, the question has corresponding answers. Press any of
+                  the answers to send a response back to the sender.
+                </label>
+                <div className="d-flex align-items-center justify-content-center flex-column">
+                  <Button
+                    primary
+                    text="Next"
+                    onClick={() => revealLetter(!showLtr)}
+                  />
+                  <Sub className="mt-2" text="'Next' to view the letter" />
+                </div>
+              </div>
+            ) : null}
+          </div>
         </div>
       </Layout>
     );
