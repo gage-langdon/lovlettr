@@ -1,4 +1,6 @@
 .letter-explanation-large {
+  margin-top: 25px;
+  margin-left: 10px;
   width: 280px;
   height: 110px;
   font-size: 14px;
@@ -10,6 +12,8 @@
 }
 
 .letter-explanation-small {
+  margin-top: 25px;
+  margin-left: 10px;
   width: 280px;
   height: 65px;
   font-size: 14px;
@@ -29,6 +33,7 @@
   width: 240px;
   height: 35px;
   margin-top: 41px;
+  margin-left: 20px;
   color: #2f2e41;
   font-family: 'Segoe UI', sans-serif;
   font-weight: bold;
@@ -38,11 +43,12 @@
 .answer-container-letter {
   display: flex;
   flex-direction: column;
+  margin-left: 12px;
   position: absolute;
   width: 255px;
   height: 67px;
   overflow: hidden;
-  margin-top: 93.5px;
+  margin-top: 94px;
   text-align: center;
   border-radius: 12px 12px 12px 12px;
 }
@@ -54,10 +60,5 @@
 }
 
 .loader {
-  margin-top: 40px;
-  margin-left: 100px;
-}
-
-.send-button-container {
-  background-color: green;
+  margin-top: 25px;
 }
