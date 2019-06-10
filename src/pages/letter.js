@@ -42,14 +42,14 @@ const LettrPage = props => {
 
   async function sendResponse({ questionResponse }) {
     const { status } = await editLtr({ ...ltr, questionResponse });
+    setLtr({ ...ltr, questionResponse });
     if (status === 200) {
       alert('Letter response sent!');
-      redirect('/');
     }
   }
 
   if (showLtr) {
-    const { questionInputText, answers, letterHTML } = ltr;
+    const { questionInputText, answers, letterHTML, questionResponse } = ltr;
     return (
       <Layout>
         <div className="d-flex align-items-center flex-column">
@@ -60,7 +60,7 @@ const LettrPage = props => {
             />
             <Pages className="pages" />
           </div>
-          <div>
+          <div hidden={questionResponse}>
             <p className="question-container-letter">{questionInputText}</p>
             <div className="answer-container-letter">
               {answers.map(item => (
@@ -73,12 +73,12 @@ const LettrPage = props => {
               ))}
             </div>
             <Box hidden={answers.length === 0} className="box-letter" />
-          </div>
-          <div hidden={answers.length === 0}>
-            <Sub
-              className="d-flex justify-content-center mt-1 mb-3"
-              text="click an answer and the sender is notified"
-            />
+            <div hidden={answers.length === 0}>
+              <Sub
+                className="d-flex justify-content-center mt-1 mb-3"
+                text="click an answer and the sender is notified"
+              />
+            </div>
           </div>
           <Link className="mt-2 mb-2" to="/compose">
             <Button primary text="Send one back" />
