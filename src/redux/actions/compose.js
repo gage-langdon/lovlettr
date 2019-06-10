@@ -40,5 +40,10 @@ export default {
   setLtr: value => ({
     type: TYPES.SET_LTR,
     payload: value
+  }),
+
+  setShow: value => ({
+    type: TYPES.SET_SHOW,
+    payload: value
   })
 };

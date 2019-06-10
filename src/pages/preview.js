@@ -22,6 +22,9 @@ import './styles/preview.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import actions from '../redux/actions/compose';
+
+/* eslint-disable */
+
 const mapStateToProps = ({ compose }) => ({ ...compose });
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
@@ -32,14 +35,15 @@ const PreviewLetterPage = ({
   answers,
   setLtr,
   ltr,
-  questionBuilderTick
+  questionBuilderTick,
+  show,
+  setShow
 }) => {
   if (letterHTML === '' || letterHTML === '<p><br></p>') redirect('/');
-  if (ltr) console.log(ltr);
 
   return (
     <Layout>
-      <Modal letterId={ltr.letterId} />
+      <Modal letterId={ltr.letterId} show={show} setShow={setShow} />
       <div className="d-flex align-items-center flex-column">
         <Label cursive className="d-flex align-self-center">
           <h1>Preview</h1>
@@ -76,16 +80,18 @@ const PreviewLetterPage = ({
           <Button
             primary
             text="Send"
-            disabled={ltr.letterId !== undefined}
             onClick={async () =>
-              setLtr(
-                await postLtr({
-                  userEmail,
-                  letterHTML,
-                  questionInputText,
-                  answers
-                })
-              )
+              ltr
+                ? setShow(!show)
+                : (setLtr(
+                    await postLtr({
+                      userEmail,
+                      letterHTML,
+                      questionInputText,
+                      answers
+                    })
+                  ),
+                  setShow(!show))
             }
           />
         </div>
