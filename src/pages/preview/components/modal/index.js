@@ -3,12 +3,6 @@ import { Modal, Button } from 'react-bootstrap';
 
 import './modal.css';
 export default ({ letterId, show, setShow }) => {
-  function copyToClipboard() {
-    const copyText = document.getElementById('url');
-    copyText.select();
-    document.execCommand('copy');
-  }
-
   return (
     <Modal show={show}>
       <Modal.Header>
@@ -31,7 +25,11 @@ export default ({ letterId, show, setShow }) => {
             Close
           </Button>
           <Button
-            onClick={() => copyToClipboard()}
+            onClick={() =>
+              navigator.clipboard.writeText(
+                `https://lovlettr.com/letter/${letterId}`
+              )
+            }
             className="ml-2"
             variant="primary"
           >
