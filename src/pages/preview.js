@@ -9,6 +9,7 @@ import Layout from '../components/layout';
 import Button from '../components/button';
 import { Link } from 'gatsby';
 import Label from '../components/label';
+import Modal from './preview/components/modal';
 
 //images
 import Pages from '../images/pages.svg';
@@ -33,12 +34,12 @@ const PreviewLetterPage = ({
   ltr,
   questionBuilderTick
 }) => {
-  // Preview page should redirect
   if (letterHTML === '' || letterHTML === '<p><br></p>') redirect('/');
-  if (ltr !== '') redirect('/letter');
+  if (ltr) console.log(ltr);
 
   return (
     <Layout>
+      <Modal letterId={ltr.letterId} />
       <div className="d-flex align-items-center flex-column">
         <Label cursive className="d-flex align-self-center">
           <h1>Preview</h1>
@@ -75,6 +76,7 @@ const PreviewLetterPage = ({
           <Button
             primary
             text="Send"
+            disabled={ltr.letterId !== undefined}
             onClick={async () =>
               setLtr(
                 await postLtr({
