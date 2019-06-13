@@ -36,5 +36,14 @@ export default {
 
   onQuestionTick: () => ({
     type: TYPES.SET_TICK_QUESTION
+  }),
+  setLtr: value => ({
+    type: TYPES.SET_LTR,
+    payload: value
+  }),
+
+  setShow: value => ({
+    type: TYPES.SET_SHOW,
+    payload: value
   })
 };

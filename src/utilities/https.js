@@ -18,7 +18,7 @@ export async function postLtr(body) {
       'https://rnj9cz9vca.execute-api.us-west-2.amazonaws.com/prod/ltr/create',
       body
     );
-    return response;
+    return response.data;
   } catch (err) {
     console.log(err);
   }

@@ -11,9 +11,16 @@ exports[`Question component Will only render with all props passed in 1`] = `
       className="input-question-field"
       disabled={false}
       placeholder="Will you go on a date with me?"
+      type="text"
       value=""
     />
   </form>
+  <sub
+    className="question-sub-text"
+    hidden={false}
+  >
+    enter a question and then add some answers
+  </sub>
   <div
     className="d-flex flex-column"
   >

@@ -7,11 +7,19 @@ const initialState = {
   hiddenAddAnswer: false,
   answers: [],
   questionBuilderTick: false,
-  userEmail: ''
+  userEmail: '',
+  ltr: '',
+  show: false
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
+    case TYPES.SET_SHOW: {
+      return {
+        ...state,
+        show: action.payload
+      };
+    }
     case TYPES.EDIT_LETTER: {
       return {
         ...state,
@@ -61,6 +69,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         userEmail: action.payload
+      };
+    }
+    case TYPES.SET_LTR: {
+      return {
+        ...state,
+        ltr: action.payload
       };
     }
     default:

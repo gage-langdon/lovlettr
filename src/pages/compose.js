@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 //components
 import Layout from '../components/layout';
+import Sub from '../components/sub';
 import Label from '../components/label';
 import Button from '../components/button';
 import TextEditor from '../components/text-editor/index.js';
@@ -10,6 +11,9 @@ import QuestionBuilder from '../components/question-builder/index';
 import Input from '../components/input-field';
 import Checkbox from '../components/checkbox';
 import './styles/compose.css';
+
+//functions
+import validEmail from '../utilities/regex';
 
 // Redux
 import { connect } from 'react-redux';
@@ -41,15 +45,25 @@ const ComposePage = ({
     </div>
     <div className="d-flex justify-content-center">
       <Input
+        type="email"
         className="email-input"
         onChange={onEmailChange}
         placeholder="enter your email"
         value={userEmail}
       />
     </div>
-    <sub className="d-flex justify-content-center mt-2">
-      where you will recieve the response
-    </sub>
+    <Sub
+      className="d-flex justify-content-center mt-1"
+      text={
+        validEmail(userEmail) || userEmail === ''
+          ? 'where you will recieve the response'
+          : 'enter a valid email'
+      }
+      style={
+        validEmail(userEmail) || userEmail === '' ? undefined : { color: 'red' }
+      }
+    />
+
     <div className="text-editor-header">
       <Label cursive className="text-center">
         Your letter
@@ -81,13 +95,15 @@ const ComposePage = ({
         />
       </div>
     </div>
-    <div className="d-flex justify-content-end mt-3 mr-2">
+    <div className="button-container">
       <Link to="/preview">
         <Button
           disabled={
             userEmail === '' ||
             letterHTML === '<p><br></p>' ||
-            letterHTML === ''
+            letterHTML === '' ||
+            !validEmail(userEmail) ||
+            (questionInputText === '' && !questionBuilderTick)
           }
           primary
           text="Preview"

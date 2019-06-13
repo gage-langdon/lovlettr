@@ -13,7 +13,7 @@
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
-.button-secondary {
+.button-submit {
   height: 40px;
   width: 123px;
   background-color: #ff6584;
@@ -26,6 +26,34 @@
   outline: 0 !important;
   border-style: none;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.button-square {
+  background-color: #fff2fb;
+  height: 100px;
+  max-height: 35;
+  color: #2f2e41;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  opacity: 90%;
+  outline: 0 !important;
+  border-style: none;
+}
+
+.button-square:hover {
+  background-color: #ffe3f7;
+  color: black;
+}
+
+.button-square:focus {
+  background-color: #ffe3f7;
+  color: black;
+}
+
+.button-preview {
+  height: 40px;
+  width: 160px;
 }
 button:hover {
   background-color: #fd466b;

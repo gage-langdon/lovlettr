@@ -16,14 +16,7 @@ const AddAnswer = ({
   questionInputText
 }) => {
   return (
-    <form
-      onSubmit={e => {
-        e.preventDefault();
-        if (answerInputText !== '') {
-          onAnswerSubmit(answerItemCreate(answerInputText));
-        }
-      }}
-    >
+    <div>
       <label
         className="add-answer-button"
         disabled={questionInputText === ''}
@@ -33,9 +26,16 @@ const AddAnswer = ({
         {label}
       </label>
       <div hidden={!hidden}>
-        <div className="d-inline-flex flex-row">
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            if (answerInputText !== '') {
+              onAnswerSubmit(answerItemCreate(answerInputText));
+            }
+          }}
+        >
           {!hidden ? null : (
-            <div>
+            <div className="d-inline-flex flex-row">
               <input
                 className="input-answer-field"
                 autoFocus={true}
@@ -45,16 +45,16 @@ const AddAnswer = ({
                 maxLength="18"
               />
               <Button
-                className="button-secondary"
+                className="button-submit"
                 type="submit"
                 text="Submit"
                 disabled={answerInputText === ''}
               />
             </div>
           )}
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 };
 

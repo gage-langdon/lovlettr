@@ -15,7 +15,7 @@ class TextEditor extends React.Component {
   render() {
     const { onLetterChange, placeholder, letterHTML } = this.props;
     return (
-      <div className="d-flex flex-column align-items-center">
+      <div className=" d-flex flex-column align-items-center">
         <div className="text-editor-container">
           <ReactQuill
             theme="bubble"
@@ -37,6 +37,6 @@ TextEditor.defaultProps = {
 TextEditor.propTypes = {
   letterHTML: PropTypes.string,
   placeholder: PropTypes.string,
-  onLetterChange: PropTypes.func.isRequired
+  onLetterChange: PropTypes.func
 };
 export default TextEditor;

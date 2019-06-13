@@ -10,7 +10,6 @@
   margin-top: 25px;
   margin-right: 230px;
 }
-
 .email-input-header {
   display: flex;
   justify-content: center;
@@ -27,4 +26,11 @@
   font-family: 'Segoe UI', sans-serif;
   font-weight: bold;
   outline: 0 !important;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 170px;
+  margin-top: 10px;
 }

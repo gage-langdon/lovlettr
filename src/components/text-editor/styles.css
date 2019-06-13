@@ -6,6 +6,12 @@
   margin-top: 3px;
 }
 
+.preview-container {
+  height: 375px;
+  width: 275px;
+  overflow-y: scroll;
+}
+
 .subtext {
   position: static;
   z-index: -1;
