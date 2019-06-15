@@ -8,11 +8,18 @@ const initialState = {
   answers: [],
   questionBuilderTick: false,
   userEmail: '',
-  ltr: ''
+  ltr: '',
+  show: false
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
+    case TYPES.SET_SHOW: {
+      return {
+        ...state,
+        show: action.payload
+      };
+    }
     case TYPES.EDIT_LETTER: {
       return {
         ...state,
