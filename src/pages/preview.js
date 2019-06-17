@@ -40,7 +40,6 @@ const PreviewLetterPage = ({
   setShow
 }) => {
   if (letterHTML === '' || letterHTML === '<p><br></p>') redirect('/');
-
   return (
     <Layout>
       <Modal letterId={ltr.letterId} show={show} setShow={setShow} />
