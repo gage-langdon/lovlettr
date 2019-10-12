@@ -98,6 +98,7 @@ const ComposePage = ({
     <div className="button-container">
       <Link to="/preview">
         <Button
+          className="mb-4"
           disabled={
             userEmail === '' ||
             letterHTML === '<p><br></p>' ||

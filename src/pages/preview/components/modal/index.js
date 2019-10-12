@@ -1,5 +1,6 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import Button from '../../../../components/button';
+import { Modal } from 'react-bootstrap';
 
 import './modal.css';
 export default ({ letterId, show, setShow }) => {
@@ -21,9 +22,18 @@ export default ({ letterId, show, setShow }) => {
       <Modal.Footer className="d-flex justify-content-between">
         <p>Copy the url and send it!</p>
         <div>
-          <Button onClick={() => setShow(!show)} variant="secondary">
+          <button
+            className="text-muted pr-2"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              outlineStyle: 'none'
+            }}
+            onClick={() => setShow(!show)}
+          >
             Close
-          </Button>
+          </button>
           <Button
             onClick={() =>
               navigator.clipboard.writeText(
@@ -31,12 +41,32 @@ export default ({ letterId, show, setShow }) => {
               )
             }
             className="ml-2"
-            variant="primary"
-          >
-            Copy
-          </Button>
+            primary
+            text="Copy"
+          />
         </div>
       </Modal.Footer>
     </Modal>
   );
 };
+
+{
+  /* <Button
+            className="mb-4"
+            primary
+            text="Send"
+            onClick={async () =>
+              ltr
+                ? setShow(!show)
+                : (setLtr(
+                    await postLtr({
+                      userEmail,
+                      letterHTML,
+                      questionInputText,
+                      answers
+                    })
+                  ),
+                  setShow(!show))
+            }
+          /> */
+}

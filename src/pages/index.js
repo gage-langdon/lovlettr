@@ -38,7 +38,7 @@ const IndexPage = () => (
         <Label cursive>
           <h4>Be Mine?</h4>
         </Label>
-        <Link to="/compose" className="mt-3">
+        <Link to="/compose" className="mt-3 mb-4">
           <Button primary text="Try it out" />
         </Link>
       </div>

@@ -77,6 +77,7 @@ const PreviewLetterPage = ({
             Edit
           </Link>
           <Button
+            className="mb-4"
             primary
             text="Send"
             onClick={async () =>
