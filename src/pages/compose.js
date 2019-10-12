@@ -103,7 +103,10 @@ const ComposePage = ({
             letterHTML === '<p><br></p>' ||
             letterHTML === '' ||
             !validEmail(userEmail) ||
-            (questionInputText === '' && !questionBuilderTick)
+            (questionInputText === '' && !questionBuilderTick) ||
+            (questionInputText !== '' &&
+              answers.length === 0 &&
+              !questionBuilderTick)
           }
           primary
           text="Preview"
