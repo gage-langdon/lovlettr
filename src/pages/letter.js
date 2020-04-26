@@ -53,19 +53,18 @@ const LettrPage = props => {
     return (
       <Layout>
         <div className="d-flex align-items-center flex-column">
-          <div className="pages-container">
-            <div
-              className="text-preview-field"
-              dangerouslySetInnerHTML={{ __html: letterHTML }}
-            />
-            <Pages className="pages" />
-          </div>
+          <div
+            className="text-preview-field"
+            dangerouslySetInnerHTML={{ __html: letterHTML }}
+          />
+          {/* <Pages className="pages" /> */}
+
           <div hidden={questionResponse}>
             <p className="question-container-letter">{questionInputText}</p>
             <div className="answer-container-letter">
               {answers.map(item => (
                 <Button
-                  className="button-square"
+                  className="button-secondary"
                   onClick={() => sendResponse({ questionResponse: item.text })}
                   key={item.id}
                   text={item.text}

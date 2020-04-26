@@ -5,10 +5,10 @@ import './styles.css';
 //images
 import Tick from '../../images/tick.svg';
 
-const Checkbox = ({ hidden, onClick }) => {
+const Checkbox = ({ checked, onClick }) => {
   return (
     <div onClick={() => onClick()}>
-      <Tick className="tick" hidden={hidden} />
+      {(checked && <Tick className="tick" />) || null}
       <div className="tick-container" />
     </div>
   );

@@ -33,7 +33,7 @@ const IndexPage = () => (
         <h3>Receive and send a response</h3>
       </Label>
     </div>
-    <div className="pt-5">
+    <div className="mt-5 mb-4">
       <div className="d-flex flex-column align-items-center pt-5">
         <Label cursive>
           <h4>Be Mine?</h4>

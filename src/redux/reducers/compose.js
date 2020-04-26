@@ -1,4 +1,4 @@
-import TYPES from '../TYPES/compose';
+import TYPES from '../types/compose';
 
 const initialState = {
   letterHTML: '',
@@ -6,7 +6,7 @@ const initialState = {
   answerInputText: '',
   hiddenAddAnswer: false,
   answers: [],
-  questionBuilderTick: false,
+  questionBuilderTick: true,
   userEmail: '',
   ltr: '',
   show: false

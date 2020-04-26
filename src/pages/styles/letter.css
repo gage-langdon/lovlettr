@@ -24,22 +24,6 @@
   outline: 0 !important;
 }
 
-.question-container-letter {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  word-break: break-all;
-  width: 240px;
-  height: 35px;
-  margin-top: 41px;
-  margin-left: 20px;
-  color: #2f2e41;
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-}
-
 .answer-container-letter {
   display: flex;
   flex-direction: column;

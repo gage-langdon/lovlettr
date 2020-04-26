@@ -1,4 +1,4 @@
-import TYPES from '../TYPES/compose';
+import TYPES from '../types/compose';
 
 export default {
   onLetterChange: value => ({

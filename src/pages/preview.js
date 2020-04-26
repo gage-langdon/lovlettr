@@ -13,7 +13,6 @@ import Modal from './preview/components/modal';
 
 //images
 import Pages from '../images/pages.svg';
-import Box from '../images/question-box.svg';
 
 //styles
 import './styles/preview.css';
@@ -47,53 +46,50 @@ const PreviewLetterPage = ({
         <Label cursive className="d-flex align-self-center">
           <h1>Preview</h1>
         </Label>
-        <div className="pages-container">
-          <div
-            className="text-preview-field"
-            dangerouslySetInnerHTML={{ __html: letterHTML }}
-          />
-          <Pages className="pages" />
-        </div>
-        <div hidden={questionBuilderTick}>
-          <p className="question-container">{questionInputText}</p>
-          <div className="answer-container">
-            {answers.map(item => (
-              <Button
-                className="button-square"
-                key={item.id}
-                text={item.text}
-              />
-            ))}
+        <div dangerouslySetInnerHTML={{ __html: letterHTML }} />
+        {(questionBuilderTick && (
+          <div className="d-flex align-items-center flex-column">
+            <p className="question-container">{questionInputText}</p>
+            <div className="answer-container">
+              {answers.map(item => (
+                <Button
+                  className="button-secondary"
+                  key={item.id}
+                  text={item.text}
+                />
+              ))}
+            </div>
+            <div>
+              <sub className="d-flex justify-content-center mt-2 mb-3">
+                click an answer and the sender is notified
+              </sub>
+            </div>
           </div>
-          <Box hidden={answers.length === 0} className="box" />
-          <div hidden={answers.length === 0}>
-            <sub className="d-flex justify-content-center mt-1 mb-3">
-              click an answer and the sender is notified
-            </sub>
-          </div>
-        </div>
-        <div className="send-button-container">
-          <Link to="/compose" className="text-muted pr-3">
-            Edit
-          </Link>
-          <Button
-            primary
-            text="Send"
-            onClick={async () =>
-              ltr
-                ? setShow(!show)
-                : (setLtr(
-                    await postLtr({
-                      userEmail,
-                      letterHTML,
-                      questionInputText,
-                      answers
-                    })
-                  ),
-                  setShow(!show))
-            }
-          />
-        </div>
+        )) ||
+          null}
+        <Pages className="pages" />
+      </div>
+      <div className="send-button-container mb-4">
+        <Link to="/compose" className="text-muted pr-3">
+          Edit
+        </Link>
+        <Button
+          primary
+          text="Send"
+          onClick={async () =>
+            ltr
+              ? setShow(!show)
+              : (setLtr(
+                  await postLtr({
+                    userEmail,
+                    letterHTML,
+                    questionInputText,
+                    answers
+                  })
+                ),
+                setShow(!show))
+          }
+        />
       </div>
     </Layout>
   );

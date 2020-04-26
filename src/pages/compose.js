@@ -77,25 +77,28 @@ const ComposePage = ({
       />
     </div>
     <div className="question-header">
-      <Checkbox onClick={onQuestionTick} hidden={questionBuilderTick} />
+      <Checkbox onClick={onQuestionTick} checked={questionBuilderTick} />
       <Label cursive>Question</Label>
     </div>
-    <div className="d-flex justify-content-center">
-      <div hidden={questionBuilderTick}>
-        <QuestionBuilder
-          onQuestionChange={onQuestionChange}
-          questionInputText={questionInputText}
-          onAnswerChange={onAnswerChange}
-          answerInputText={answerInputText}
-          onAnswerButtonClick={onAnswerButtonClick}
-          onAnswerSubmit={onAnswerSubmit}
-          hiddenAddAnswer={hiddenAddAnswer}
-          answers={answers}
-          setAnswerArray={setAnswerArray}
-        />
+    {(questionBuilderTick && (
+      <div className="d-flex justify-content-center">
+        <div>
+          <QuestionBuilder
+            onQuestionChange={onQuestionChange}
+            questionInputText={questionInputText}
+            onAnswerChange={onAnswerChange}
+            answerInputText={answerInputText}
+            onAnswerButtonClick={onAnswerButtonClick}
+            onAnswerSubmit={onAnswerSubmit}
+            hiddenAddAnswer={hiddenAddAnswer}
+            answers={answers}
+            setAnswerArray={setAnswerArray}
+          />
+        </div>
       </div>
-    </div>
-    <div className="button-container">
+    )) ||
+      null}
+    <div className="button-container mb-4">
       <Link to="/preview">
         <Button
           disabled={
@@ -103,7 +106,8 @@ const ComposePage = ({
             letterHTML === '<p><br></p>' ||
             letterHTML === '' ||
             !validEmail(userEmail) ||
-            (questionInputText === '' && !questionBuilderTick)
+            (questionInputText === '' && questionBuilderTick) ||
+            (questionBuilderTick && !answers.length)
           }
           primary
           text="Preview"
