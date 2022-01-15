@@ -1,0 +1,71 @@
+{
+  "name": "lovlettr",
+  "private": true,
+  "description": "Modern love letters built with Gatsby",
+  "version": "0.1.0",
+  "author": "Gage Langdon and Maxton Delaney",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "jest ./src"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "css"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.svg$": "<rootDir>/test/svgMock.js"
+    }
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "axios": "^0.19.0",
+    "gatsby": "^2.1.31",
+    "gatsby-image": "^2.0.33",
+    "gatsby-plugin-create-client-paths": "^2.0.5",
+    "gatsby-plugin-manifest": "^2.0.24",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.9",
+    "gatsby-plugin-react-svg": "^2.1.1",
+    "gatsby-plugin-sharp": "^2.0.28",
+    "gatsby-source-filesystem": "^2.0.24",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "react-dom": "^16.8.4",
+    "react-helmet": "^5.2.0",
+    "react-quill": "^1.3.3",
+    "react-redux": "^6.0.1",
+    "react-spinners": "^0.5.4",
+    "redux": "^4.0.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-to-json": "^3.3.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.5.0",
+    "jsdom": "^14.0.0",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.4"
+  }
+}
