@@ -2,7 +2,8 @@
   "name": "Lovlettr Backend API",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "sls offline"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
